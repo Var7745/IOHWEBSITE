@@ -8,11 +8,26 @@ import {
 } from 'lucide-react';
 import { siteContent } from '../data/siteContent';
 
-export default function Carousel({ darkMode }) {
+export default function Carousel() {
   const [current, setCurrent] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const slides = siteContent.carouselSlides;
   const timeoutRef = useRef(null);
+
+  // Check for prefers-reduced-motion
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (mediaQuery.matches) {
+      setIsPlaying(false);
+    }
+
+    const handleChange = (e) => {
+      if (e.matches) setIsPlaying(false);
+    };
+
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
 
   const resetTimeout = () => {
     if (timeoutRef.current) {
@@ -41,54 +56,65 @@ export default function Carousel({ darkMode }) {
   };
 
   return (
-    <div className="relative w-full rounded-3xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-800 group">
+    <div 
+      className="relative w-full rounded-3xl overflow-hidden shadow-lg border border-gray-200 group"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="IOH Engineering Prototype Showcase"
+    >
       {/* Slides Container */}
-      <div className="relative h-[480px] sm:h-[540px] lg:h-[560px] w-full overflow-hidden bg-black">
+      <div className="relative h-[420px] xs:h-[480px] sm:h-[540px] lg:h-[560px] w-full overflow-hidden bg-black">
         {slides.map((slide, index) => {
           const isActive = index === current;
           return (
             <div
               key={slide.id}
+              role="group"
+              aria-roledescription="slide"
+              aria-label={`${index + 1} of ${slides.length}: ${slide.title}`}
+              aria-hidden={!isActive}
               className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
                 isActive ? 'opacity-100 z-10 scale-100' : 'opacity-0 z-0 scale-105 pointer-events-none'
               } transition-transform duration-700`}
             >
-              {/* Background Image with Crisp Monochrome Contrast Gradient */}
+              {/* Background Image with optimized loading */}
               <img
                 src={slide.image}
                 alt={slide.title}
-                className="w-full h-full object-cover object-center filter grayscale-[25%] brightness-90 contrast-105"
+                loading={index === 0 ? "eager" : "lazy"}
+                fetchPriority={index === 0 ? "high" : "low"}
+                className="w-full h-full object-cover object-center brightness-95 contrast-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-transparent" aria-hidden="true" />
 
               {/* Slide Content */}
-              <div className="absolute inset-0 flex flex-col justify-end p-8 sm:p-12 max-w-3xl z-20">
+              <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-10 lg:p-12 max-w-3xl z-20">
                 <div className="space-y-3">
                   
                   {/* Badge */}
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-mono font-bold uppercase tracking-wider bg-white text-black">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-mono font-bold uppercase tracking-wider bg-[#EDF5EF] text-[#0B3D2E] border border-[#CDE1D3] shadow-sm">
                     <span>{slide.badge}</span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+                  <h3 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight font-['Outfit']">
                     {slide.title}
                   </h3>
 
                   {/* Subtitle */}
-                  <p className="text-sm sm:text-base text-gray-300 max-w-2xl leading-relaxed">
+                  <p className="text-xs sm:text-sm lg:text-base text-gray-200 max-w-2xl leading-relaxed">
                     {slide.subtitle}
                   </p>
 
                   {/* CTA Action */}
                   {slide.ctaText && (
-                    <div className="pt-3">
+                    <div className="pt-2">
                       <a
                         href={slide.ctaLink || '#contact'}
-                        className="inline-flex items-center gap-2 px-5 py-2.5 text-xs sm:text-sm font-bold text-black bg-white hover:bg-gray-200 rounded-xl transition-all duration-200 shadow-sm"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 text-xs sm:text-sm font-bold text-white bg-[#0B3D2E] hover:bg-[#06261c] rounded-xl transition-all duration-200 shadow-md focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
                       >
                         <span>{slide.ctaText}</span>
-                        <ExternalLink className="w-3.5 h-3.5" />
+                        <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
                       </a>
                     </div>
                   )}
@@ -103,36 +129,39 @@ export default function Carousel({ darkMode }) {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-white/90 hover:bg-white text-black shadow-md transition-all duration-200 hover:scale-105"
+        className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 z-30 p-2.5 sm:p-3 rounded-full bg-white/90 hover:bg-white text-black shadow-md transition-all duration-200 hover:scale-105 focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none"
         aria-label="Previous Slide"
       >
-        <ChevronLeft className="w-5 h-5" />
+        <ChevronLeft className="w-5 h-5" aria-hidden="true" />
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-white/90 hover:bg-white text-black shadow-md transition-all duration-200 hover:scale-105"
+        className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 z-30 p-2.5 sm:p-3 rounded-full bg-white/90 hover:bg-white text-black shadow-md transition-all duration-200 hover:scale-105 focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none"
         aria-label="Next Slide"
       >
-        <ChevronRight className="w-5 h-5" />
+        <ChevronRight className="w-5 h-5" aria-hidden="true" />
       </button>
 
       {/* Slide Indicators & Auto-play Pause Bar */}
-      <div className="absolute bottom-4 right-6 z-30 flex items-center gap-3 bg-black/80 px-4 py-2 rounded-full border border-gray-700">
+      <div className="absolute bottom-4 right-4 sm:right-6 z-30 flex items-center gap-3 bg-black/80 backdrop-blur-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-gray-700">
         <button
           onClick={() => setIsPlaying(!isPlaying)}
-          className="text-gray-300 hover:text-white transition-colors"
+          className="text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white rounded p-1"
+          aria-label={isPlaying ? "Pause automatic slide progression" : "Start automatic slide progression"}
           title={isPlaying ? "Pause auto-slide" : "Play auto-slide"}
         >
-          {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
+          {isPlaying ? <Pause className="w-3.5 h-3.5" aria-hidden="true" /> : <Play className="w-3.5 h-3.5" aria-hidden="true" />}
         </button>
 
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-1.5" role="tablist" aria-label="Slide Selection">
           {slides.map((_, index) => (
             <button
               key={index}
+              role="tab"
+              aria-selected={index === current}
               onClick={() => setCurrent(index)}
-              className={`h-2 rounded-full transition-all duration-300 ${
+              className={`h-2 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white ${
                 index === current ? 'w-6 bg-white' : 'w-2 bg-gray-600 hover:bg-gray-400'
               }`}
               aria-label={`Go to slide ${index + 1}`}

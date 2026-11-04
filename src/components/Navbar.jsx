@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  Bot, 
   Menu, 
   X, 
   ChevronRight, 
   PhoneCall
 } from 'lucide-react';
-import { siteContent } from '../data/siteContent';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,9 +31,20 @@ export default function Navbar() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Keyboard accessibility: Close mobile menu on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && isOpen) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen]);
 
   const navLinks = [
     { name: 'Home', href: '#home', id: 'home' },
@@ -44,109 +53,167 @@ export default function Navbar() {
     { name: 'Contact', href: '#contact', id: 'contact' },
   ];
 
+  const handleScrollToContact = (e) => {
+    e.preventDefault();
+    if (isOpen) setIsOpen(false);
+    const formTarget = document.getElementById('contact-form') || document.getElementById('contact');
+    if (formTarget) {
+      formTarget.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      window.history.pushState(null, '', '#contact');
+      setTimeout(() => {
+        const input = document.getElementById('contact-name');
+        if (input) {
+          input.focus({ preventScroll: true });
+          input.classList.add('ring-4', 'ring-[#0B3D2E]/30', 'border-[#0B3D2E]');
+          setTimeout(() => {
+            input.classList.remove('ring-4', 'ring-[#0B3D2E]/30', 'border-[#0B3D2E]');
+          }, 1500);
+        }
+      }, 500);
+    }
+  };
+
+  const handleNavClick = (e, link) => {
+    if (link.id === 'contact') {
+      handleScrollToContact(e);
+      return;
+    }
+    e.preventDefault();
+    if (isOpen) setIsOpen(false);
+    const target = document.getElementById(link.id);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+      window.history.pushState(null, '', link.href);
+    }
+  };
+
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled 
-        ? 'bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm py-3' 
-        : 'bg-white py-4 border-b border-gray-100'
-    }`}>
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
-        <div className="flex items-center justify-between">
-          
-          {/* Brand Logo */}
-          <a href="#home" className="flex items-center gap-3 group">
-            <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-black text-white group-hover:bg-gray-800 transition-colors shadow-sm">
-              <Bot className="w-5 h-5" />
-            </div>
+    <>
+      {/* Accessible Skip to Content Link (WCAG 2.2 AA) */}
+      <a 
+        href="#about" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-black focus:text-white focus:rounded-lg focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-white"
+      >
+        Skip to main content
+      </a>
+
+      <header 
+        role="banner"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled 
+            ? 'bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm py-3' 
+            : 'bg-white py-4 border-b border-gray-100'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
+          <div className="flex items-center justify-between">
             
-            <div className="flex flex-col">
-              <span className="text-xl font-extrabold tracking-tight font-['Outfit'] text-black">
-                IOH <span className="font-light">ENGINEERING</span>
-              </span>
-              <span className="text-[10px] font-mono tracking-widest uppercase text-gray-500 font-semibold">
-                iohengineering.com
-              </span>
-            </div>
-          </a>
-
-          {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-2">
-            {navLinks.map((link) => {
-              const isActive = activeSection === link.id;
-              return (
-                <a
-                  key={link.id}
-                  href={link.href}
-                  className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
-                    isActive
-                      ? 'text-black font-bold bg-gray-100'
-                      : 'text-gray-600 hover:text-black hover:bg-gray-50'
-                  }`}
-                >
-                  {link.name}
-                </a>
-              );
-            })}
-          </nav>
-
-          {/* Contact Button */}
-          <div className="hidden sm:flex items-center">
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-lg bg-black text-white hover:bg-gray-800 transition-all shadow-sm"
+            {/* Brand Logo */}
+            <a 
+              href="#home" 
+              className="flex items-center gap-3 group focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none rounded-xl p-1"
+              aria-label="IOH Engineering - Home"
             >
-              <PhoneCall className="w-3.5 h-3.5" />
-              <span>Contact Us</span>
-            </a>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg border border-gray-200 text-gray-900"
-              aria-label="Toggle Navigation Menu"
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Dropdown Navigation */}
-        {isOpen && (
-          <div className="md:hidden mt-3 rounded-2xl p-4 border border-gray-200 bg-white shadow-xl">
-            <div className="flex flex-col space-y-1">
-              {navLinks.map((link) => (
-                <a
-                  key={link.id}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className={`flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${
-                    activeSection === link.id
-                      ? 'bg-gray-100 text-black font-bold'
-                      : 'hover:bg-gray-50 text-gray-700'
-                  }`}
-                >
-                  <span>{link.name}</span>
-                  <ChevronRight className="w-4 h-4 opacity-40" />
-                </a>
-              ))}
+              <img 
+                src="/ioh-logo.jpg" 
+                alt="IOH Engineering Logo" 
+                className="w-10 h-10 rounded-xl object-contain border border-gray-200 bg-white p-0.5 shadow-sm group-hover:border-black transition-colors"
+              />
               
-              <div className="pt-3 border-t border-gray-100 mt-2">
-                <a
-                  href="#contact"
-                  onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-center gap-2 w-full px-4 py-3 text-sm font-semibold rounded-xl bg-black text-white"
-                >
-                  <PhoneCall className="w-4 h-4" />
-                  <span>Contact Us</span>
-                </a>
-              </div>
+              <span className="text-xl tracking-tight font-clash font-medium text-gray-900 group-hover:text-black transition-colors">
+                IOH ENGINEERING
+              </span>
+            </a>
+
+            {/* Desktop Navigation Links */}
+            <nav className="hidden md:flex items-center gap-1 lg:gap-2" aria-label="Primary navigation">
+              {navLinks.map((link) => {
+                const isActive = activeSection === link.id;
+                return (
+                  <a
+                    key={link.id}
+                    href={link.href}
+                    onClick={(e) => handleNavClick(e, link)}
+                    aria-current={isActive ? 'page' : undefined}
+                    className={`px-3.5 lg:px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus-visible:ring-2 focus-visible:ring-[#0B3D2E] focus-visible:outline-none ${
+                      isActive
+                        ? 'text-[#0B3D2E] font-bold bg-[#EDF5EF]'
+                        : 'text-gray-600 hover:text-[#0B3D2E] hover:bg-gray-50'
+                    }`}
+                  >
+                    {link.name}
+                  </a>
+                );
+              })}
+            </nav>
+
+            {/* Desktop Contact CTA */}
+            <div className="hidden sm:flex items-center">
+              <a
+                href="#contact"
+                onClick={handleScrollToContact}
+                className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-xl bg-[#0B3D2E] text-white hover:bg-[#06261c] transition-all shadow-sm focus-visible:ring-2 focus-visible:ring-[#0B3D2E] focus-visible:ring-offset-2 focus-visible:outline-none cursor-pointer"
+              >
+                <PhoneCall className="w-3.5 h-3.5" aria-hidden="true" />
+                <span>Contact Us</span>
+              </a>
+            </div>
+
+            {/* Mobile Menu Button with complete ARIA attributes */}
+            <div className="flex md:hidden items-center">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="p-2.5 rounded-lg border border-gray-200 text-gray-900 focus-visible:ring-2 focus-visible:ring-black focus-visible:outline-none"
+                aria-expanded={isOpen}
+                aria-controls="mobile-navigation"
+                aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+              >
+                {isOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
+              </button>
             </div>
           </div>
-        )}
 
-      </div>
-    </header>
+          {/* Mobile Dropdown Navigation */}
+          {isOpen && (
+            <nav 
+              id="mobile-navigation"
+              aria-label="Mobile navigation"
+              className="md:hidden mt-3 rounded-2xl p-4 border border-gray-200 bg-white shadow-xl animate-in fade-in slide-in-from-top-2 duration-200"
+            >
+              <div className="flex flex-col space-y-1">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.id}
+                    href={link.href}
+                    onClick={(e) => handleNavClick(e, link)}
+                    aria-current={activeSection === link.id ? 'page' : undefined}
+                    className={`flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${
+                      activeSection === link.id
+                        ? 'bg-[#EDF5EF] text-[#0B3D2E] font-bold'
+                        : 'hover:bg-gray-50 text-gray-700'
+                    }`}
+                  >
+                    <span>{link.name}</span>
+                    <ChevronRight className="w-4 h-4 opacity-40" aria-hidden="true" />
+                  </a>
+                ))}
+                
+                <div className="pt-3 border-t border-gray-100 mt-2">
+                  <a
+                    href="#contact"
+                    onClick={handleScrollToContact}
+                    className="flex items-center justify-center gap-2 w-full px-4 py-3 text-sm font-semibold rounded-xl bg-[#0B3D2E] text-white hover:bg-[#06261c] transition-colors cursor-pointer"
+                  >
+                    <PhoneCall className="w-4 h-4" aria-hidden="true" />
+                    <span>Contact Us</span>
+                  </a>
+                </div>
+              </div>
+            </nav>
+          )}
+
+        </div>
+      </header>
+    </>
   );
 }

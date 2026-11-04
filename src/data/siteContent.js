@@ -2,52 +2,54 @@ export const siteContent = {
   company: {
     name: "IOH Engineering",
     domain: "iohengineering.com",
+    logo: "/ioh-logo.jpg",
     legalName: "IOH Engineering Pvt. Ltd.",
-    tagline: "Pioneering Drone Research, Agricultural Automation & Autonomous Delivery Systems",
-    shortDescription: "Specializing in the research, design, and development of advanced drone technologies, service-oriented agricultural aerial platforms, and autonomous delivery bots.",
-    phone1: "+91 97045 76076",
-    phone2: "+91 70755 82211",
-    email: "contact@iohengineering.com",
-    supportEmail: "support@iohengineering.com",
-    address: "Aerospace & Robotics Technology Park, Hyderabad, Telangana, India - 500081",
+    tagline: "Smart, Sustainable, and Energy-Efficient Agricultural Solutions",
+    shortDescription: "IOH Engineering Pvt. Ltd. is an innovation-driven engineering company focused on developing smart, sustainable, and energy-efficient solutions for agriculture. We aim to simplify farming through innovative technologies that improve resource utilization, reduce operational costs, and enhance productivity. Our mission is to make advanced engineering solutions accessible, affordable, and practical for farmers.",
+    phone1: "+91 86881 10521",
+    email: "iohengineering12@gmail.com",
+    supportEmail: "iohengineering12@gmail.com",
+    address: "Tblock, TKR College of engineering and technology, Meerpet, Hyderabad",
     workingHours: "Monday - Saturday: 9:00 AM - 6:30 PM IST"
   },
 
   hero: {
-    title: "Welcome to IOH Engineering",
-    subtitle: "IOH Engineering is a pioneering technology enterprise focused on research, design, and development of cutting-edge drone technologies, service-oriented agricultural drones, autonomous delivery bots, and unmanned ground robotics.",
-    cta: "GET STARTED"
+    title: "Agricultural PTP Nozzle System",
+    subtitle: "An intelligent, centralized smart nozzle engineered by IOH Engineering for targeted water irrigation and precision pesticide spraying across full 1-acre fields, dynamically adapting to irregular farm boundaries without complex piping networks.",
+    cta: "EXPLORE PTP NOZZLE",
+    ctaSecondary: "CONTACT US"
   },
 
   stats: [
-    { label: "Autonomous Flight Hours Tested", value: "15,000+", unit: "Hours" },
-    { label: "Successful Field Deployments", value: "100+", unit: "Missions" },
-    { label: "Chemical Spray Reduction in Trials", value: "85%", unit: "Savings" },
-    { label: "Navigation Reliability Index", value: "99.9%", unit: "Uptime" }
+    { label: "Single Unit Coverage", value: "1 Acre", unit: "Per Nozzle Unit" },
+    { label: "Piping Cost Reduction", value: "70%+", unit: "Savings" },
+    { label: "Pan Articulation Range", value: "360°", unit: "Continuous" },
+    { label: "Water & Chemical Efficiency", value: "High", unit: "Dual Precision" }
   ],
 
   introduction: {
     title: "About IOH Engineering",
-    subtitle: "Innovating at the intersection of aeronautical engineering, autonomous navigation, and real-world robotics service delivery.",
-    description: "IOH Engineering is an engineering and R&D organization dedicated to developing next-generation autonomous unmanned aerial vehicles (UAVs) and ground robotics. We design, prototype, and field-test high-reliability systems tailored for commercial agriculture, express logistics deliveries, and autonomous service missions.",
-    mission: "To engineer intelligent, sustainable, and reliable autonomous drones and delivery robotics that redefine efficiency in modern agriculture, cargo transit, and industrial automation.",
-    vision: "To lead the future of autonomous unmanned technology by delivering robust, service-oriented aerial and ground robotics that create measurable real-world impact.",
+    subtitle: "Pioneering centralized agricultural nozzle technology for high-efficiency water irrigation and precision pesticide spraying.",
+    problemStatement: "Traditional agricultural operations face severe challenges on two fronts: irrigation requires expensive drip networks (up to ₹80K/acre) that suffer frequent clogging and animal damage, while pesticide spraying often relies on hazardous manual labor, uneven chemical dispersion, and costly equipment that cannot easily navigate irregular farm shapes.",
+    description: "IOH Engineering has developed the Agricultural PTP (Pan-Tilt-Pressure) Nozzle — an intelligent, centralized smart nozzle system designed for both water irrigation and precision pesticide spraying. Mounted on a central pole, the nozzle integrates multi-axis pan-tilt articulation with variable pressure regulation to accurately project water or agricultural crop protection sprays across irregular field geometries, eliminating fragile pipelines while safeguarding crop health.",
+    mission: "To make advanced engineering solutions accessible, affordable, and practical for farmers by simplifying farming through innovative technologies that improve resource utilization, reduce operational costs, and enhance productivity.",
+    vision: "To pioneer the future of precision agriculture by replacing cumbersome pipe infrastructure with intelligent, centralized smart nozzles capable of full-parcel water and crop protection spraying.",
     pillars: [
       {
-        title: "Drone R&D & Aeronautical Design",
-        desc: "Custom carbon-fiber airframes, aerodynamically optimized multi-rotors, and hybrid VTOL platforms engineered for extended endurance and high payloads."
+        title: "Centralized 1-Acre Nozzle Coverage",
+        desc: "A single centralized pole-mounted nozzle engineered to provide complete irrigation and spraying coverage for an entire 1-acre parcel, replacing thousands of feet of field piping."
       },
       {
-        title: "Service-Oriented Agricultural Drones",
-        desc: "Centimeter-accurate RTK spraying drones, autonomous seeding modules, and multispectral canopy imaging to transform precision farming."
+        title: "Dual Water & Pesticide Spraying",
+        desc: "Engineered to deliver both clean water irrigation and chemical/pesticide spraying through the precision nozzle, ensuring uniform droplet distribution and crop protection."
       },
       {
-        title: "Autonomous Delivery Bots & Cargo Drones",
-        desc: "Fail-safe last-mile delivery drones and rugged ground rovers equipped with real-time obstacle avoidance and secure payload drop mechanisms."
+        title: "Dynamic Pan-Tilt Direction Control",
+        desc: "Continuous 360° pan rotation and multi-angle tilt articulation that dynamically steers the nozzle stream toward every sector, perimeter, and corner of the farm."
       },
       {
-        title: "Proprietary Autonomy & Sensor Fusion",
-        desc: "In-house autopilot firmware, multi-sensor LiDAR/optical SLAM integration, and edge neural processing for fully autonomous beyond-line-of-sight missions."
+        title: "Adaptive Pressure Modulation",
+        desc: "Automated variable pressure regulation that dynamically modulates the spray throw distance to match irregular farm boundaries, preventing overspray."
       }
     ]
   },
@@ -55,81 +57,77 @@ export const siteContent = {
   achievements: [
     {
       id: 1,
-      title: "15,000+ Verified Autonomous Mission Hours",
-      category: "Flight Endurance",
-      description: "Successfully logged extensive flight and ground navigation testing across extreme temperature regimes (-10°C to 48°C), high-humidity fields, and gusty wind conditions.",
-      metric: "15,000+ Hrs",
-      badge: "Testing Milestone"
+      title: "Winner — Pune Agri Hackathon 2026",
+      category: "Innovation Award",
+      description: "Awarded 1st Place at the prestigious Pune Agri Hackathon 2026 for breakthrough smart agricultural nozzle architecture, validated for water efficiency and cost reduction.",
+      metric: "1st Place",
+      badge: "Hackathon Winner",
+      image: "/award-pune.jpg"
     },
     {
       id: 2,
-      title: "85% Chemical Spray Reduction in Agriculture Trials",
-      category: "Agri-Tech Impact",
-      description: "Our proprietary precision pulse micro-spraying drone trials demonstrated up to 85% reduction in chemical runoff while increasing pest mitigation efficacy across commercial orchards.",
-      metric: "85% Saved",
-      badge: "Eco Efficiency"
+      title: "2nd Runner Up — Innovation Hackathon (T-Hub & NMIET)",
+      category: "Ecosystem Recognition",
+      description: "Recognized among top emerging agricultural technology startups at the Innovation Hackathon jointly organized by Nutan Maharashtra Institute of Engineering & Technology and T-Hub.",
+      metric: "Top Finalist",
+      badge: "T-Hub Awarded",
+      image: "/award-thub.jpg"
     },
     {
       id: 3,
-      title: "Proprietary Fail-Safe Autopilot & Collision Avoidance",
-      category: "R&D Breakthrough",
-      description: "Engineered proprietary triple-redundant IMU flight control systems with 360-degree millimetric radar and stereoscopic vision for sub-second obstacle avoidance.",
-      metric: "<0.1s Response",
-      badge: "Core IP"
+      title: "Recognized by the Hon'ble Chief Minister of Maharashtra",
+      category: "State Commendation",
+      description: "Live demonstration commended on state television: 'I have come to see a beautiful sprinkler, which does 360 degrees sprinkling, but more importantly, we know that farmers do not have a square field.'",
+      metric: "Govt. Commendation",
+      badge: "State Recognition",
+      image: "/cm-recognition.jpg"
     },
     {
       id: 4,
-      title: "BVLOS Autonomous Delivery Trials Completed",
-      category: "Logistics Validation",
-      description: "Conducted successful Beyond Visual Line of Sight (BVLOS) autonomous deliveries carrying up to 10kg medical and cargo payloads across complex rural-urban corridors.",
-      metric: "10kg Payload",
-      badge: "Delivery Bot"
+      title: "Mobile Interface & Satellite Field Mapping",
+      category: "Smart IoT Control",
+      description: "Engineered proprietary mobile telemetry allowing farmers to trace irregular parcel perimeters on satellite maps; the system automatically calculates nozzle trajectory angles and pressure.",
+      metric: "GPS Mapping",
+      badge: "Mobile Telemetry",
+      image: "/ptp-app.jpg"
+    }
+  ],
+
+  team: [
+    {
+      name: "Bhavani Guni",
+      role: "CEO, Co-founder",
+      credentials: "B.Tech in Electronics & Communication Engineering",
+      experience: "Robotics and entrepreneurship leadership, spearheading business strategy, market partnerships, and field deployments.",
+      image: "/team-bhavani.jpg"
     },
     {
-      id: 5,
-      title: "Dual-Domain Air & Ground Integration",
-      category: "System Synergy",
-      description: "Seamless synchronization between aerial mapping drones and ground agricultural spraying rovers sharing real-time waypoint telemetry for collaborative missions.",
-      metric: "100% Synced",
-      badge: "Collaborative Robotics"
-    },
-    {
-      id: 6,
-      title: "Commercial Regulatory & Safety Compliance",
-      category: "Industry Standards",
-      description: "Engineered with strict adherence to DGCA Type Certification guidelines, ISO 21384 unmanned aircraft safety protocols, and fail-safe emergency parachute integration.",
-      metric: "ISO & DGCA Ready",
-      badge: "Certified Safety"
+      name: "Olive Perike",
+      role: "CTO, Co-founder",
+      credentials: "M.Tech in Power Electronics",
+      experience: "5+ Years hands-on experience in advanced robotics, embedded automation, and power electronic drive systems.",
+      image: "/team-olive.jpg"
     }
   ],
 
   carouselSlides: [
     {
       id: 1,
-      title: "Autonomous Agricultural Spraying Rover",
-      subtitle: "Centimeter-accurate crop spraying in field trials with automated row navigation",
-      image: "/hero-rover.jpg",
-      badge: "Ground Rover R&D",
-      ctaText: "Inquire R&D",
-      ctaLink: "#contact"
+      title: "Agricultural PTP Precision Nozzle",
+      subtitle: "Centralized 1-acre precision water irrigation and pesticide spraying delivered through dynamic pan-tilt and pressure-modulated nozzle control.",
+      image: "/ptp-nozzle.png",
+      badge: "Water & Pesticide Spraying",
+      ctaText: "Explore PTP Nozzle",
+      ctaLink: "#about"
     },
     {
       id: 2,
-      title: "Agricultural Drone & Delivery Systems",
-      subtitle: "High-capacity aerial spraying and express payload delivery platforms",
-      image: "/rover-2.jpg",
-      badge: "Agricultural Tech",
-      ctaText: "Explore Drones",
-      ctaLink: "#contact"
-    },
-    {
-      id: 3,
-      title: "Modular Unmanned Ground Robotics",
-      subtitle: "All-terrain rugged chassis for autonomous crop inspection and service missions",
-      image: "/rover-4.png",
-      badge: "Autonomous Systems",
-      ctaText: "View Robotics",
-      ctaLink: "#contact"
+      title: "Satellite Boundary Telemetry App",
+      subtitle: "Farmers trace irregular field boundaries on satellite maps; the system autonomously calculates nozzle trajectory angles and variable pressure.",
+      image: "/ptp-app.jpg",
+      badge: "Smart IoT Control",
+      ctaText: "View Technology",
+      ctaLink: "#about"
     }
   ]
 };

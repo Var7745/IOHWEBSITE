@@ -8,8 +8,8 @@ import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-['Plus_Jakarta_Sans',sans-serif] antialiased selection:bg-black selection:text-white">
-      {/* 1. Clean Minimalist Top Navbar */}
+    <div className="min-h-screen bg-[#F8FAF7] text-gray-900 font-['Plus_Jakarta_Sans',sans-serif] antialiased selection:bg-[#0B3D2E] selection:text-white">
+      {/* 1. Clean Top Navbar with Forest Green Accent */}
       <Navbar />
 
       {/* 2. Landing Section with Uploaded Image Background */}

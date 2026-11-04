@@ -7,7 +7,29 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        clash: ['"Clash Display"', 'sans-serif'],
+      },
       colors: {
+        forest: {
+          50: '#f2f8f5',
+          100: '#e1efe8',
+          200: '#c5ded3',
+          300: '#9ec4b5',
+          400: '#72a392',
+          500: '#518573',
+          600: '#3d6b5b',
+          700: '#315549',
+          800: '#28453c',
+          900: '#0b3d2e',
+          950: '#06261c',
+        },
+        sage: {
+          50: '#f8faf7',
+          100: '#edf5ef',
+          200: '#dbe8de',
+          300: '#c5d9ca',
+        },
         brand: {
           50: '#f0fdf4',
           100: '#dcfce7',
