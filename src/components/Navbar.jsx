@@ -48,7 +48,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Home', href: '#home', id: 'home' },
-    { name: 'About', href: '#about', id: 'about' },
+    { name: 'About Us', href: '#about', id: 'about' },
     { name: 'Achievements', href: '#achievements', id: 'achievements' },
     { name: 'Contact', href: '#contact', id: 'contact' },
   ];
@@ -99,10 +99,10 @@ export default function Navbar() {
 
       <header 
         role="banner"
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 animate-slide-down transition-all duration-600 ease-corporate ${
           scrolled 
-            ? 'bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm py-3' 
-            : 'bg-white py-4 border-b border-gray-100'
+            ? 'bg-white/95 backdrop-blur-md border-b border-[#0B3D2E]/15 shadow-[0_4px_20px_-4px_rgba(11,61,46,0.08)] py-3' 
+            : 'bg-white/85 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none border-b border-transparent py-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
@@ -117,10 +117,14 @@ export default function Navbar() {
               <img 
                 src="/ioh-logo.jpg" 
                 alt="IOH Engineering Logo" 
-                className="w-10 h-10 rounded-xl object-contain border border-gray-200 bg-white p-0.5 shadow-sm group-hover:border-black transition-colors"
+                className={`rounded-xl object-contain border border-gray-200 bg-white p-0.5 shadow-sm group-hover:border-[#0B3D2E] transition-all duration-600 ease-corporate ${
+                  scrolled ? 'w-9 h-9' : 'w-10 h-10'
+                }`}
               />
               
-              <span className="text-xl tracking-tight font-clash font-medium text-gray-900 group-hover:text-black transition-colors">
+              <span className={`tracking-tight font-clash font-medium text-gray-900 group-hover:text-[#0B3D2E] transition-all duration-600 ease-corporate ${
+                scrolled ? 'text-lg sm:text-xl' : 'text-xl sm:text-2xl'
+              }`}>
                 IOH ENGINEERING
               </span>
             </a>
@@ -135,10 +139,10 @@ export default function Navbar() {
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link)}
                     aria-current={isActive ? 'page' : undefined}
-                    className={`px-3.5 lg:px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus-visible:ring-2 focus-visible:ring-[#0B3D2E] focus-visible:outline-none ${
+                    className={`px-3.5 lg:px-4 py-2 text-sm font-medium rounded-lg nav-link-animated transition-all duration-250 ease-corporate focus-visible:ring-2 focus-visible:ring-[#0B3D2E] focus-visible:outline-none ${
                       isActive
-                        ? 'text-[#0B3D2E] font-bold bg-[#EDF5EF]'
-                        : 'text-gray-600 hover:text-[#0B3D2E] hover:bg-gray-50'
+                        ? 'text-[#0B3D2E] font-bold is-active bg-[#EDF5EF]/80'
+                        : 'text-[#1F2937] hover:text-[#0B3D2E] hover:bg-gray-50/80'
                     }`}
                   >
                     {link.name}
@@ -152,9 +156,9 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={handleScrollToContact}
-                className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-xl bg-[#0B3D2E] text-white hover:bg-[#06261c] transition-all shadow-sm focus-visible:ring-2 focus-visible:ring-[#0B3D2E] focus-visible:ring-offset-2 focus-visible:outline-none cursor-pointer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-xl bg-[#0B3D2E] text-white hover:bg-[#134E3C] corporate-btn transition-all duration-250 ease-corporate shadow-md group cursor-pointer focus-visible:ring-2 focus-visible:ring-[#0B3D2E] focus-visible:ring-offset-2 focus-visible:outline-none"
               >
-                <PhoneCall className="w-3.5 h-3.5" aria-hidden="true" />
+                <PhoneCall className="w-3.5 h-3.5 transition-transform duration-250 ease-corporate group-hover:scale-110" aria-hidden="true" />
                 <span>Contact Us</span>
               </a>
             </div>

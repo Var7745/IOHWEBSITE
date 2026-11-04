@@ -49,19 +49,19 @@ export default function Contact() {
     <section 
       id="contact" 
       aria-labelledby="contact-heading"
-      className="scroll-mt-20 py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-[#F8FAF7] text-gray-900"
+      className="scroll-mt-20 py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-[#F8FAF7] text-gray-900 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider mb-4 bg-white text-[#0B3D2E] border border-[#CDE1D3] shadow-sm">
-            <Mail className="w-3.5 h-3.5 text-[#0B3D2E]" aria-hidden="true" />
+        {/* Section Header with Scroll Reveal */}
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 reveal-init">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider mb-4 bg-white text-[#0B3D2E] border border-[#CDE1D3] shadow-sm animate-float-slow">
+            <Mail className="w-3.5 h-3.5 text-[#22C55E]" aria-hidden="true" />
             <span>Contact & Inquiries</span>
           </div>
           <h2 
             id="contact-heading"
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900 font-['Outfit'] mb-4 break-words"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900 font-heading mb-4 break-words"
           >
             Connect With IOH Engineering
           </h2>
@@ -70,26 +70,26 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* Contact Info Cards */}
+        {/* Contact Info Cards with Staggered Scroll Reveal & Corporate Hover */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
           
           {/* Address */}
-          <div className="p-6 rounded-2xl border border-gray-200 bg-white shadow-sm text-center flex flex-col items-center justify-center hover:border-[#0B3D2E] transition-all">
-            <div className="p-3 rounded-xl bg-[#EDF5EF] text-[#0B3D2E] mb-3">
+          <div className="p-6 rounded-2xl border border-gray-200 bg-white shadow-sm text-center flex flex-col items-center justify-center corporate-card group reveal-init delay-100">
+            <div className="p-3 rounded-xl bg-[#EDF5EF] text-[#0B3D2E] mb-3 group-hover:bg-[#0B3D2E] group-hover:text-white transition-all duration-300 ease-corporate group-hover:scale-110">
               <MapPin className="w-5 h-5" aria-hidden="true" />
             </div>
-            <h3 className="font-bold text-base mb-1 text-gray-900 font-['Outfit']">Corporate Address</h3>
+            <h3 className="font-bold text-base mb-1 text-gray-900 font-heading group-hover:text-[#0B3D2E] transition-colors">Corporate Address</h3>
             <p className="text-xs text-gray-600 leading-relaxed">
               {company.address}
             </p>
           </div>
 
           {/* Email */}
-          <div className="p-6 rounded-2xl border border-gray-200 bg-white shadow-sm text-center flex flex-col items-center justify-center hover:border-[#0B3D2E] transition-all">
-            <div className="p-3 rounded-xl bg-[#EDF5EF] text-[#0B3D2E] mb-3">
+          <div className="p-6 rounded-2xl border border-gray-200 bg-white shadow-sm text-center flex flex-col items-center justify-center corporate-card group reveal-init delay-150">
+            <div className="p-3 rounded-xl bg-[#EDF5EF] text-[#0B3D2E] mb-3 group-hover:bg-[#0B3D2E] group-hover:text-white transition-all duration-300 ease-corporate group-hover:scale-110">
               <Mail className="w-5 h-5" aria-hidden="true" />
             </div>
-            <h3 className="font-bold text-base mb-1 text-gray-900 font-['Outfit']">Email Us</h3>
+            <h3 className="font-bold text-base mb-1 text-gray-900 font-heading group-hover:text-[#0B3D2E] transition-colors">Email Us</h3>
             <a 
               href={`mailto:${company.email}`}
               className="text-xs font-mono font-semibold text-gray-900 hover:text-[#0B3D2E] hover:underline block focus-visible:ring-1 focus-visible:ring-[#0B3D2E] rounded p-0.5"
@@ -99,11 +99,11 @@ export default function Contact() {
           </div>
 
           {/* Phone */}
-          <div className="p-6 rounded-2xl border border-gray-200 bg-white shadow-sm text-center flex flex-col items-center justify-center hover:border-[#0B3D2E] transition-all">
-            <div className="p-3 rounded-xl bg-[#EDF5EF] text-[#0B3D2E] mb-3">
+          <div className="p-6 rounded-2xl border border-gray-200 bg-white shadow-sm text-center flex flex-col items-center justify-center corporate-card group reveal-init delay-200">
+            <div className="p-3 rounded-xl bg-[#EDF5EF] text-[#0B3D2E] mb-3 group-hover:bg-[#0B3D2E] group-hover:text-white transition-all duration-300 ease-corporate group-hover:scale-110">
               <Phone className="w-5 h-5" aria-hidden="true" />
             </div>
-            <h3 className="font-bold text-base mb-1 text-gray-900 font-['Outfit']">Call Directly</h3>
+            <h3 className="font-bold text-base mb-1 text-gray-900 font-heading group-hover:text-[#0B3D2E] transition-colors">Call Directly</h3>
             <a 
               href={`tel:${company.phone1}`}
               className="text-xs font-mono font-semibold text-gray-900 hover:text-[#0B3D2E] hover:underline block focus-visible:ring-1 focus-visible:ring-[#0B3D2E] rounded p-0.5"
@@ -116,11 +116,11 @@ export default function Contact() {
           </div>
 
           {/* Hours */}
-          <div className="p-6 rounded-2xl border border-gray-200 bg-white shadow-sm text-center flex flex-col items-center justify-center hover:border-[#0B3D2E] transition-all">
-            <div className="p-3 rounded-xl bg-[#EDF5EF] text-[#0B3D2E] mb-3">
+          <div className="p-6 rounded-2xl border border-gray-200 bg-white shadow-sm text-center flex flex-col items-center justify-center corporate-card group reveal-init delay-250">
+            <div className="p-3 rounded-xl bg-[#EDF5EF] text-[#0B3D2E] mb-3 group-hover:bg-[#0B3D2E] group-hover:text-white transition-all duration-300 ease-corporate group-hover:scale-110">
               <Clock className="w-5 h-5" aria-hidden="true" />
             </div>
-            <h3 className="font-bold text-base mb-1 text-gray-900 font-['Outfit']">Working Hours</h3>
+            <h3 className="font-bold text-base mb-1 text-gray-900 font-heading group-hover:text-[#0B3D2E] transition-colors">Working Hours</h3>
             <p className="text-xs text-gray-600 leading-relaxed">
               Mon - Sat: 9:00 AM - 6:30 PM IST<br />
               <span className="font-bold text-[#0B3D2E] font-mono">Technical Consultations on Request</span>
@@ -129,18 +129,18 @@ export default function Contact() {
 
         </div>
 
-        {/* Inquiry Form */}
-        <div id="contact-form" className="scroll-mt-28 max-w-3xl mx-auto rounded-3xl border border-gray-200 bg-white p-6 sm:p-10 lg:p-12 shadow-sm">
+        {/* Inquiry Form with Scroll Reveal & Corporate Button */}
+        <div id="contact-form" className="scroll-mt-28 max-w-3xl mx-auto rounded-3xl border border-gray-200 bg-white p-6 sm:p-10 lg:p-12 shadow-sm corporate-card reveal-init delay-200">
           {submitted ? (
             <div 
               role="status" 
               aria-live="polite" 
               className="text-center py-8 sm:py-10 space-y-4"
             >
-              <div className="w-16 h-16 rounded-full bg-black text-white flex items-center justify-center mx-auto">
-                <CheckCircle2 className="w-8 h-8" aria-hidden="true" />
+              <div className="w-16 h-16 rounded-full bg-[#0B3D2E] text-white flex items-center justify-center mx-auto shadow-md">
+                <CheckCircle2 className="w-8 h-8 text-[#22C55E]" aria-hidden="true" />
               </div>
-              <h3 className="text-2xl sm:text-3xl font-bold font-['Outfit'] text-black">
+              <h3 className="text-2xl sm:text-3xl font-bold font-heading text-black">
                 Inquiry Successfully Submitted!
               </h3>
               <p className="max-w-md mx-auto text-sm text-gray-600 leading-relaxed">
@@ -160,7 +160,7 @@ export default function Contact() {
                       message: '',
                     });
                   }}
-                  className="px-6 py-2.5 rounded-xl text-xs font-bold font-mono uppercase bg-[#0B3D2E] text-white hover:bg-[#06261c] transition-colors focus-visible:ring-2 focus-visible:ring-[#0B3D2E] focus-visible:outline-none shadow-sm"
+                  className="px-6 py-2.5 rounded-xl text-xs font-bold font-mono uppercase bg-[#0B3D2E] text-white hover:bg-[#134E3C] corporate-btn transition-colors focus-visible:ring-2 focus-visible:ring-[#0B3D2E] focus-visible:outline-none shadow-sm"
                 >
                   Submit Another Inquiry
                 </button>
@@ -171,12 +171,12 @@ export default function Contact() {
               
               <div className="border-b border-gray-200 pb-4 mb-6">
                 <div className="flex items-center gap-2 mb-1">
-                  <ShieldCheck className="w-4 h-4 text-[#0B3D2E]" aria-hidden="true" />
+                  <ShieldCheck className="w-4 h-4 text-[#22C55E]" aria-hidden="true" />
                   <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#0B3D2E]">
                     Official Inquiries & Consultations
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-black font-['Outfit']">
+                <h3 className="text-xl font-bold text-black font-heading">
                   Submit an Engineering or Service Consultation Request
                 </h3>
                 <p className="text-xs text-gray-500 mt-1">
@@ -202,7 +202,7 @@ export default function Contact() {
                     placeholder="e.g. ABCD"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl text-sm border border-gray-300 bg-white text-black focus:outline-none focus:border-black focus-visible:ring-2 focus-visible:ring-black shadow-sm"
+                    className="w-full px-4 py-3 rounded-xl text-sm border border-gray-300 bg-white text-black transition-all duration-200 focus:outline-none focus:border-[#0B3D2E] focus:ring-2 focus:ring-[#0B3D2E]/20 shadow-sm"
                   />
                 </div>
 
@@ -222,7 +222,7 @@ export default function Contact() {
                     placeholder="abcd@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl text-sm border border-gray-300 bg-white text-black focus:outline-none focus:border-black focus-visible:ring-2 focus-visible:ring-black shadow-sm"
+                    className="w-full px-4 py-3 rounded-xl text-sm border border-gray-300 bg-white text-black transition-all duration-200 focus:outline-none focus:border-[#0B3D2E] focus:ring-2 focus:ring-[#0B3D2E]/20 shadow-sm"
                   />
                 </div>
               </div>
@@ -243,7 +243,7 @@ export default function Contact() {
                     placeholder="+91 12345 67890"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl text-sm border border-gray-300 bg-white text-black focus:outline-none focus:border-black focus-visible:ring-2 focus-visible:ring-black shadow-sm"
+                    className="w-full px-4 py-3 rounded-xl text-sm border border-gray-300 bg-white text-black transition-all duration-200 focus:outline-none focus:border-[#0B3D2E] focus:ring-2 focus:ring-[#0B3D2E]/20 shadow-sm"
                   />
                 </div>
 
@@ -261,7 +261,7 @@ export default function Contact() {
                     placeholder="e.g. ABCD Agro / Farm"
                     value={formData.organization}
                     onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl text-sm border border-gray-300 bg-white text-black focus:outline-none focus:border-black focus-visible:ring-2 focus-visible:ring-black shadow-sm"
+                    className="w-full px-4 py-3 rounded-xl text-sm border border-gray-300 bg-white text-black transition-all duration-200 focus:outline-none focus:border-[#0B3D2E] focus:ring-2 focus:ring-[#0B3D2E]/20 shadow-sm"
                   />
                 </div>
               </div>
@@ -279,7 +279,7 @@ export default function Contact() {
                   name="serviceInterest"
                   value={formData.serviceInterest}
                   onChange={(e) => setFormData({ ...formData, serviceInterest: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl text-sm border border-gray-300 bg-white text-black focus:outline-none focus:border-black focus-visible:ring-2 focus-visible:ring-black shadow-sm"
+                  className="w-full px-4 py-3 rounded-xl text-sm border border-gray-300 bg-white text-black transition-all duration-200 focus:outline-none focus:border-[#0B3D2E] focus:ring-2 focus:ring-[#0B3D2E]/20 shadow-sm"
                 >
                   <option value="Agricultural PTP Nozzle Inquiries">Agricultural PTP Nozzle Inquiries</option>
                   <option value="Water & Pesticide Precision Spraying">Water & Pesticide Precision Spraying</option>
@@ -308,21 +308,21 @@ export default function Contact() {
                   placeholder="Describe your farm parcel layout (acres, regular/irregular), water supply conditions, crop types, or collaboration scope..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl text-sm border border-gray-300 bg-white text-black focus:outline-none focus:border-black focus-visible:ring-2 focus-visible:ring-black shadow-sm"
+                  className="w-full px-4 py-3 rounded-xl text-sm border border-gray-300 bg-white text-black transition-all duration-200 focus:outline-none focus:border-[#0B3D2E] focus:ring-2 focus:ring-[#0B3D2E]/20 shadow-sm"
                 />
               </div>
 
-              {/* Submit CTA */}
+              {/* Submit CTA with Corporate Button Animations */}
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-base bg-[#0B3D2E] text-white hover:bg-[#06261c] transition-colors shadow-md disabled:opacity-50 focus-visible:ring-2 focus-visible:ring-[#0B3D2E] focus-visible:ring-offset-2 focus-visible:outline-none"
+                className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-base bg-[#0B3D2E] text-white hover:bg-[#134E3C] corporate-btn shadow-md disabled:opacity-50 group focus-visible:ring-2 focus-visible:ring-[#0B3D2E] focus-visible:ring-offset-2 focus-visible:outline-none"
               >
                 {isSubmitting ? (
                   <span>Submitting Inquiry...</span>
                 ) : (
                   <>
-                    <Send className="w-4 h-4" aria-hidden="true" />
+                    <Send className="w-4 h-4 transition-transform duration-250 ease-corporate group-hover:translate-x-1" aria-hidden="true" />
                     <span>Submit Inquiry</span>
                   </>
                 )}

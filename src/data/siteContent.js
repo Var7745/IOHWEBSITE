@@ -29,10 +29,39 @@ export const siteContent = {
   introduction: {
     title: "About IOH Engineering",
     subtitle: "Pioneering centralized agricultural nozzle technology for high-efficiency water irrigation and precision pesticide spraying.",
-    problemStatement: "Traditional agricultural operations face severe challenges on two fronts: irrigation requires expensive drip networks (up to ₹80K/acre) that suffer frequent clogging and animal damage, while pesticide spraying often relies on hazardous manual labor, uneven chemical dispersion, and costly equipment that cannot easily navigate irregular farm shapes.",
+    problemStatement: "Traditional farming faces costly irrigation systems prone to clogging and animal damage, along with hazardous, uneven pesticide spraying using expensive equipment unsuitable for irregular fields.",
     description: "IOH Engineering has developed the Agricultural PTP (Pan-Tilt-Pressure) Nozzle — an intelligent, centralized smart nozzle system designed for both water irrigation and precision pesticide spraying. Mounted on a central pole, the nozzle integrates multi-axis pan-tilt articulation with variable pressure regulation to accurately project water or agricultural crop protection sprays across irregular field geometries, eliminating fragile pipelines while safeguarding crop health.",
-    mission: "To make advanced engineering solutions accessible, affordable, and practical for farmers by simplifying farming through innovative technologies that improve resource utilization, reduce operational costs, and enhance productivity.",
-    vision: "To pioneer the future of precision agriculture by replacing cumbersome pipe infrastructure with intelligent, centralized smart nozzles capable of full-parcel water and crop protection spraying.",
+    mission: "To empower farmers with affordable, innovative engineering solutions that reduce costs, optimize resources, and improve agricultural productivity.",
+    vision: "To transform precision agriculture through intelligent, centralized spraying systems that eliminate pipelines and enable efficient farm-wide irrigation and crop protection.",
+    ptpHeadline: "Agricultural PTP Nozzle — Water Precision Spraying Nozzle",
+    ptpSubtitle: "An intelligent, centralized spraying system for precise water irrigation and pesticide application.",
+    ptpFeaturesTitle: "Key Features",
+    ptpPoints: [
+      {
+        title: "1-Acre Coverage",
+        icon: "Sprout"
+      },
+      {
+        title: "Dual Water & Pesticide Spraying",
+        icon: "Droplets"
+      },
+      {
+        title: "360° Pan-Tilt Movement",
+        icon: "RotateCw"
+      },
+      {
+        title: "Adjustable Spray Pressure",
+        icon: "Gauge"
+      },
+      {
+        title: "GPS-Based Field Mapping",
+        icon: "Satellite"
+      },
+      {
+        title: "Pipeline-Free Irrigation",
+        icon: "ShieldCheck"
+      }
+    ],
     pillars: [
       {
         title: "Centralized 1-Acre Nozzle Coverage",
