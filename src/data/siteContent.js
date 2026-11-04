@@ -8,7 +8,6 @@ export const siteContent = {
     shortDescription: "IOH Engineering Pvt. Ltd. is an innovation-driven engineering company focused on developing smart, sustainable, and energy-efficient solutions for agriculture. We aim to simplify farming through innovative technologies that improve resource utilization, reduce operational costs, and enhance productivity. Our mission is to make advanced engineering solutions accessible, affordable, and practical for farmers.",
     phone1: "+91 86881 10521",
     email: "iohengineering12@gmail.com",
-    supportEmail: "iohengineering12@gmail.com",
     address: "Tblock, TKR College of engineering and technology, Meerpet, Hyderabad",
     workingHours: "Monday - Saturday: 9:00 AM - 6:30 PM IST"
   },
@@ -58,38 +57,20 @@ export const siteContent = {
     {
       id: 1,
       title: "Winner — Pune Agri Hackathon 2026",
-      category: "Innovation Award",
+      category: "1st Prize Innovation Award",
       description: "Awarded 1st Place at the prestigious Pune Agri Hackathon 2026 for breakthrough smart agricultural nozzle architecture, validated for water efficiency and cost reduction.",
-      metric: "1st Place",
+      metric: "1st Place Winner",
       badge: "Hackathon Winner",
-      image: "/award-pune.jpg"
+      image: "/award-pune-winner.jpg"
     },
     {
       id: 2,
-      title: "2nd Runner Up — Innovation Hackathon (T-Hub & NMIET)",
-      category: "Ecosystem Recognition",
-      description: "Recognized among top emerging agricultural technology startups at the Innovation Hackathon jointly organized by Nutan Maharashtra Institute of Engineering & Technology and T-Hub.",
-      metric: "Top Finalist",
-      badge: "T-Hub Awarded",
-      image: "/award-thub.jpg"
-    },
-    {
-      id: 3,
-      title: "Recognized by the Hon'ble Chief Minister of Maharashtra",
-      category: "State Commendation",
-      description: "Live demonstration commended on state television: 'I have come to see a beautiful sprinkler, which does 360 degrees sprinkling, but more importantly, we know that farmers do not have a square field.'",
-      metric: "Govt. Commendation",
-      badge: "State Recognition",
-      image: "/cm-recognition.jpg"
-    },
-    {
-      id: 4,
-      title: "Mobile Interface & Satellite Field Mapping",
-      category: "Smart IoT Control",
-      description: "Engineered proprietary mobile telemetry allowing farmers to trace irregular parcel perimeters on satellite maps; the system automatically calculates nozzle trajectory angles and pressure.",
-      metric: "GPS Mapping",
-      badge: "Mobile Telemetry",
-      image: "/ptp-app.jpg"
+      title: "2nd Runner Up — Innovators Hackathon",
+      category: "T-Hub & Nutan Incubation Centre",
+      description: "Awarded 2nd Runner Up and ₹15,000 prize cheque for Team Sprinckler at the Innovators Hackathon, recognized by T-Hub and Nutan Incubation Centre for smart agricultural spraying innovation.",
+      metric: "₹15,000 Prize Money",
+      badge: "2nd Runner Up",
+      image: "/award-runnerup-cheque.jpg"
     }
   ],
 

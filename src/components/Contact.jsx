@@ -96,14 +96,6 @@ export default function Contact() {
             >
               {company.email}
             </a>
-            {company.supportEmail && (
-              <a 
-                href={`mailto:${company.supportEmail}`}
-                className="text-xs font-mono text-gray-500 hover:text-[#0B3D2E] hover:underline block mt-0.5 focus-visible:ring-1 focus-visible:ring-[#0B3D2E] rounded p-0.5"
-              >
-                {company.supportEmail}
-              </a>
-            )}
           </div>
 
           {/* Phone */}
