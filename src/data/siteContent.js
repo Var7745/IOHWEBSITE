@@ -108,14 +108,14 @@ export const siteContent = {
       name: "Bhavani Guni",
       role: "CEO, Co-founder",
       credentials: "B.Tech in Electronics & Communication Engineering",
-      experience: "Robotics and entrepreneurship leadership, spearheading business strategy, market partnerships, and field deployments.",
+      experience: "1 Year of experience in robotics and entrepreneurship club.",
       image: "/team-bhavani.jpg"
     },
     {
       name: "Olive Perike",
       role: "CTO, Co-founder",
       credentials: "M.Tech in Power Electronics",
-      experience: "5+ Years hands-on experience in advanced robotics, embedded automation, and power electronic drive systems.",
+      experience: "5 Years of experience in robotics.",
       image: "/team-olive.jpg"
     }
   ],

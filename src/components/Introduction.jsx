@@ -230,9 +230,11 @@ export default function Introduction() {
                     <span className="text-xs font-mono font-bold text-[#0B3D2E] uppercase tracking-wider block mb-1">
                       {member.role}
                     </span>
-                    <p className="text-xs font-semibold text-gray-800 mb-2">
-                      {member.credentials}
-                    </p>
+                    {member.credentials && (
+                      <p className="text-xs font-semibold text-gray-800 mb-2">
+                        {member.credentials}
+                      </p>
+                    )}
                     <p className="text-xs text-gray-600 leading-relaxed">
                       {member.experience}
                     </p>
