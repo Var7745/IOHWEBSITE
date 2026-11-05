@@ -7,7 +7,6 @@ import {
   Droplets, 
   RotateCw, 
   Satellite, 
-  AlertTriangle, 
   Sprout, 
   Gauge 
 } from 'lucide-react';
@@ -58,59 +57,36 @@ export default function Introduction() {
     >
       <div className="max-w-7xl mx-auto">
         
-        {/* Section Header with Scroll Reveal */}
-        <div className="max-w-4xl mb-12 sm:mb-16 reveal-init">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-[#EDF5EF] text-[#0B3D2E] border border-[#CDE1D3] mb-3 shadow-sm">
-            <ShieldCheck className="w-3.5 h-3.5 text-[#22C55E]" aria-hidden="true" />
-            <span>Sustainable Agricultural Innovation</span>
-          </div>
-          <h2 
-            id="about-heading"
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900 font-heading mb-4 break-words"
-          >
-            About IOH Engineering
-          </h2>
-          <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-normal">
-            {company.shortDescription}
-          </p>
-        </div>
-
-        {/* Top Split Grid: The Agricultural Challenge & PTP Nozzle Overview + Showcase Carousel */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-16 sm:mb-20">
+        {/* Top Split Grid: PTP Nozzle Overview + Showcase Carousel */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-16 sm:mb-20">
           
           {/* Narrative Column */}
           <div className="lg:col-span-6 space-y-6">
             
-            {/* The Agricultural Challenge Card with Scroll Reveal */}
-            <div className="p-6 rounded-2xl bg-[#F8FAF7] border border-[#D5E4D8] shadow-sm reveal-init delay-100 corporate-card">
-              <div className="flex items-center gap-2 mb-2">
-                <AlertTriangle className="w-4 h-4 text-[#F59E0B] shrink-0" aria-hidden="true" />
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#0B3D2E]">
-                  The Agricultural Challenge
-                </span>
-              </div>
-              <p className="text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
-                {introduction.problemStatement}
-              </p>
-            </div>
-
             {/* The PTP Solution */}
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 font-heading leading-snug reveal-init delay-150 mb-2">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-[#EDF5EF] text-[#0B3D2E] border border-[#CDE1D3] mb-3 shadow-sm">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#22C55E]" aria-hidden="true" />
+                  <span>Sustainable Agricultural Innovation</span>
+                </div>
+                <h2 
+                  id="about-heading"
+                  className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 font-heading leading-tight reveal-init delay-150 mb-3"
+                >
                   Agricultural PTP Nozzle — Water Precision Spraying Nozzle
-                </h3>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
+                </h2>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-normal">
                   An intelligent, centralized spraying system for precise water irrigation and pesticide application.
                 </p>
               </div>
 
-              <div className="pt-1">
+              <div className="pt-2">
                 <div className="flex items-center gap-2 mb-3">
                   <span className="w-2 h-2 rounded-full bg-[#22C55E]" aria-hidden="true" />
-                  <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#0B3D2E] font-heading">
+                  <h3 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#0B3D2E] font-heading">
                     Key Features
-                  </h4>
+                  </h3>
                 </div>
 
                 {/* Key Features Points with Themed Icons (6 Features in 2-Col Grid) */}
