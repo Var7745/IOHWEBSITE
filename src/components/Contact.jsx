@@ -99,16 +99,13 @@ export default function Contact() {
             <div className="p-3 rounded-xl bg-[#EDF5EF] text-[#0B3D2E] mb-3 group-hover:bg-[#0B3D2E] group-hover:text-white transition-all duration-300 ease-corporate group-hover:scale-110">
               <Phone className="w-5 h-5" aria-hidden="true" />
             </div>
-            <h3 className="font-bold text-base mb-1 text-gray-900 font-heading group-hover:text-[#0B3D2E] transition-colors">Call Directly</h3>
+            <h3 className="font-bold text-base mb-1 text-gray-900 font-heading group-hover:text-[#0B3D2E] transition-colors">Call Us</h3>
             <a 
               href={`tel:${company.phone1}`}
               className="text-xs font-mono font-semibold text-gray-900 hover:text-[#0B3D2E] hover:underline block focus-visible:ring-1 focus-visible:ring-[#0B3D2E] rounded p-0.5"
             >
               {company.phone1}
             </a>
-            <span className="text-[10px] font-mono text-gray-400 block mt-0.5">
-              Direct Engineering Line
-            </span>
           </div>
 
           {/* Hours */}
@@ -118,8 +115,7 @@ export default function Contact() {
             </div>
             <h3 className="font-bold text-base mb-1 text-gray-900 font-heading group-hover:text-[#0B3D2E] transition-colors">Working Hours</h3>
             <p className="text-xs text-gray-600 leading-relaxed">
-              Mon - Sat: 9:00 AM - 6:30 PM IST<br />
-              <span className="font-bold text-[#0B3D2E] font-mono">Technical Consultations on Request</span>
+              Mon - Sat: 9:00 AM - 6:30 PM IST
             </p>
           </div>
 
