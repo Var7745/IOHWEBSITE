@@ -13,8 +13,9 @@ export const siteContent = {
   },
 
   hero: {
-    title: "Agricultural PTP Nozzle System",
-    subtitle: "An intelligent, centralized smart nozzle engineered by IOH Engineering for targeted water irrigation and precision pesticide spraying across full 1-acre fields, dynamically adapting to irregular farm boundaries without complex piping networks.",
+    badge: "WELCOME TO IOH ENGINEERING",
+    title: "Welcome to IOH Engineering",
+    subtitle: "An innovation-driven engineering company focused on developing smart, sustainable, and energy-efficient solutions to simplify farming and empower farmers.",
     cta: "EXPLORE PTP NOZZLE",
     ctaSecondary: "CONTACT US"
   },

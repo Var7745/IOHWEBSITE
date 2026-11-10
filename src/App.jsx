@@ -13,7 +13,7 @@ export default function App() {
   useScrollReveal();
 
   return (
-    <div className="min-h-screen bg-[#F8FAF7] text-[#1F2937] font-sans antialiased selection:bg-[#0B3D2E] selection:text-white">
+    <div className="min-h-screen bg-[#F7F8F4] text-[#202820] font-sans antialiased selection:bg-[#174C35] selection:text-white">
       {/* 1. Animated Sticky Navbar with Forest Green Accent */}
       <Navbar />
 
