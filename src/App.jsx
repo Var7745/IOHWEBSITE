@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import AboutCompany from './components/AboutCompany';
 import Introduction from './components/Introduction';
 import Achievements from './components/Achievements';
 import Contact from './components/Contact';
@@ -13,26 +14,29 @@ export default function App() {
   useScrollReveal();
 
   return (
-    <div className="min-h-screen bg-[#F7F8F4] text-[#202820] font-sans antialiased selection:bg-[#174C35] selection:text-white">
+    <div className="min-h-screen bg-[#F8FAF7] text-[#1F2937] font-sans antialiased selection:bg-[#0B3D2E] selection:text-white">
       {/* 1. Animated Sticky Navbar with Forest Green Accent */}
       <Navbar />
 
-      {/* 2. Hero Section with Staggered Animations & Slow Zoom */}
+      {/* 2. SECTION 1: Welcome to IOH Engineering */}
       <Hero />
 
-      {/* 3. About Us Section (Agricultural Challenge, PTP Precision Nozzle, 8 Points, Mission/Vision, Leadership) */}
+      {/* 3. SECTION 2: About Our Company ("Who We Are") */}
+      <AboutCompany />
+
+      {/* 4. SECTION 3: Agricultural PTP Nozzle System & Leadership Team */}
       <Introduction />
 
-      {/* 4. Achievements Section (Key Milestones, Hackathon Wins, CM State Recognition) */}
+      {/* 5. Section 4: Engineering Achievements & Recognition */}
       <Achievements />
 
-      {/* 5. Contact & Services Inquiry Page */}
+      {/* 6. Section 5: Contact & Inquiries */}
       <Contact />
 
-      {/* 6. Clean Monochrome Footer */}
+      {/* 7. Footer */}
       <Footer />
 
-      {/* 7. Floating Circular Back-to-Top Button */}
+      {/* 8. Floating Circular Back-to-Top Button */}
       <BackToTop />
     </div>
   );

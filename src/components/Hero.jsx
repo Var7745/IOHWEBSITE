@@ -1,94 +1,59 @@
 import React from 'react';
-import { ArrowRight, PhoneCall, Sparkles } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 import { siteContent } from '../data/siteContent';
 
 export default function Hero() {
-  const { hero } = siteContent;
+  const { welcome } = siteContent;
 
   return (
     <section 
       id="home" 
       aria-label="Welcome section"
-      className="scroll-mt-20 pt-28 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-8 lg:px-16 bg-[#F7F8F4] border-b border-[#E1E7DF] relative"
+      className="relative min-h-[85vh] flex items-center justify-center py-28 sm:py-36 lg:py-40 px-4 sm:px-8 lg:px-16 overflow-hidden bg-[#0B3D2E] text-white"
     >
-      <div className="max-w-7xl mx-auto relative z-10">
-        
-        {/* 2-Column Split Hero Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          
-          {/* Left Column: Headline, Description & CTAs */}
-          <div className="lg:col-span-6 space-y-6">
-            
-            {/* Minimal Corporate Welcome Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-mono font-medium tracking-wider bg-[#EDF3EE] text-[#174C35] border border-[#E1E7DF] shadow-xs">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#397A4B]" aria-hidden="true" />
-              <span>{hero.badge}</span>
-            </div>
+      {/* Professional agricultural and engineering background image with subtle natural green overlay */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={welcome.bgImage} 
+          alt="Agricultural and engineering technology background"
+          className="w-full h-full object-cover object-center filter brightness-[0.32] contrast-[1.1] saturate-[1.15]"
+          fetchPriority="high"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0B3D2E]/85 via-[#0B3D2E]/75 to-[#072C21]/95" />
+      </div>
 
-            {/* Main Title */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-heading font-semibold text-[#202820] leading-[1.15] tracking-tight">
-              Welcome to{' '}
-              <span className="text-[#174C35]">
-                IOH Engineering
-              </span>
-            </h1>
-
-            {/* Subtitle */}
-            <p className="text-base sm:text-lg text-[#68736B] leading-relaxed font-normal max-w-xl">
-              {hero.subtitle}
-            </p>
-
-            {/* CTAs */}
-            <div className="pt-2 flex flex-wrap items-center gap-3.5 sm:gap-4 max-w-md sm:max-w-none">
-              <a
-                href="#about"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#174C35] text-white hover:bg-[#123C2A] corporate-btn rounded-md font-medium text-sm tracking-wide shadow-xs group focus-visible:ring-2 focus-visible:ring-[#174C35] focus-visible:outline-none"
-              >
-                <span>{hero.cta}</span>
-                <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true" />
-              </a>
-
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#174C35] border border-[#E1E7DF] hover:border-[#397A4B] hover:bg-[#F7F8F4] transition-all duration-200 rounded-md font-medium text-sm tracking-wide shadow-xs focus-visible:ring-2 focus-visible:ring-[#174C35] focus-visible:outline-none"
-              >
-                <PhoneCall className="w-3.5 h-3.5 text-[#174C35]" aria-hidden="true" />
-                <span>Contact Us</span>
-              </a>
-            </div>
-
+      <div className="relative z-10 max-w-4xl mx-auto text-center">
+        {/* Existing IOH Engineering logo */}
+        <div className="flex justify-center mb-6 sm:mb-8 animate-fade-up">
+          <div className="p-2.5 sm:p-3 rounded-2xl bg-white shadow-2xl border border-white/20 inline-flex items-center justify-center">
+            <img 
+              src={welcome.logo} 
+              alt="IOH Engineering Logo" 
+              className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl object-contain"
+            />
           </div>
-
-          {/* Right Column: Clean Technical Visual Card */}
-          <div className="lg:col-span-6 w-full">
-            <div className="relative rounded-xl overflow-hidden border border-[#E1E7DF] shadow-md bg-white p-2.5">
-              <div className="relative h-[340px] sm:h-[400px] lg:h-[440px] w-full overflow-hidden rounded-lg bg-[#202820]">
-                <img 
-                  src="/hero-bg.png" 
-                  alt="Agricultural PTP Nozzle spray test covering agricultural field"
-                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-corporate hover:scale-[1.02]"
-                  fetchPriority="high"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#202820]/80 via-[#202820]/20 to-transparent pointer-events-none" aria-hidden="true" />
-                
-                {/* Floating Top Tag */}
-                <div className="absolute top-3.5 left-3.5">
-                  <span className="px-3 py-1.5 rounded-md text-xs font-mono font-medium tracking-wider bg-black/75 text-white backdrop-blur-sm border border-white/15 shadow-xs inline-flex items-center gap-1.5">
-                    <Sparkles className="w-3 h-3 text-[#C49A50]" aria-hidden="true" />
-                    <span>Single Unit • 1 Acre Coverage</span>
-                  </span>
-                </div>
-
-                {/* Floating Bottom Info Bar */}
-                <div className="absolute bottom-3.5 left-3.5 right-3.5 p-3 px-4 rounded-md bg-[#174C35]/90 backdrop-blur-sm border border-white/10 text-white flex items-center justify-center text-xs font-mono font-medium shadow-xs">
-                  <span className="tracking-wide">Pan-Tilt-Pressure Modulation</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
 
+        {/* Large but balanced heading */}
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-heading leading-tight mb-6 animate-fade-up [animation-delay:150ms]">
+          Welcome to <span className="text-emerald-300">IOH Engineering</span>
+        </h1>
+
+        {/* Supporting sentence */}
+        <p className="text-base sm:text-xl lg:text-2xl text-emerald-100/90 leading-relaxed font-light max-w-3xl mx-auto mb-10 animate-fade-up [animation-delay:300ms]">
+          {welcome.supporting}
+        </p>
+
+        {/* Spacious layout: Simple scroll down link */}
+        <div className="animate-fade-up [animation-delay:450ms]">
+          <a 
+            href="#about"
+            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white text-[#0B3D2E] hover:bg-emerald-50 corporate-btn font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 shadow-lg group focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none cursor-pointer"
+          >
+            <span>Discover Who We Are</span>
+            <ArrowDown className="w-4 h-4 text-[#0B3D2E] transition-transform duration-200 group-hover:translate-y-0.5" aria-hidden="true" />
+          </a>
+        </div>
       </div>
     </section>
   );
