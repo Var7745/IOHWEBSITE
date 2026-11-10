@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import { 
-  Award, 
   ArrowRight, 
   Quote, 
-  ShieldCheck, 
-  X, 
-  Maximize2 
+  X 
 } from 'lucide-react';
 import { siteContent } from '../data/siteContent';
 
@@ -23,10 +20,6 @@ export default function Achievements() {
         
         {/* Section Header with Scroll Reveal */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 reveal-init">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider mb-4 bg-white text-[#0B3D2E] border border-[#CDE1D3] shadow-sm animate-float-slow">
-            <Award className="w-3.5 h-3.5 text-[#22C55E]" aria-hidden="true" />
-            <span>Track Record & Milestones</span>
-          </div>
           <h2 
             id="achievements-heading"
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900 font-heading mb-4 break-words"
@@ -66,12 +59,7 @@ export default function Achievements() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
             {/* Statement / Quote Column */}
-            <div className="lg:col-span-7 space-y-4 text-left">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[11px] font-mono font-bold uppercase tracking-wider bg-white/10 text-emerald-300 border border-white/20">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-300" aria-hidden="true" />
-                <span>State Level Commendation • News18 Live Broadcast</span>
-              </div>
-              
+            <div className="lg:col-span-7 space-y-5 text-left">
               <div className="relative pt-1">
                 <Quote className="w-8 h-8 text-emerald-400/40 mb-2" aria-hidden="true" />
                 <blockquote className="text-lg sm:text-2xl font-heading font-semibold leading-snug text-white italic">
@@ -79,15 +67,9 @@ export default function Achievements() {
                 </blockquote>
               </div>
 
-              <div className="pt-3 text-xs sm:text-sm text-gray-200 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                <div>
-                  <strong className="text-white block font-semibold text-sm sm:text-base">Hon&apos;ble Chief Minister of Maharashtra</strong>
-                  <span className="text-emerald-100/80 text-xs">Acknowledging the PTP Nozzle&apos;s irregular parcel precision coverage</span>
-                </div>
-                <span className="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-300 bg-white/10 px-3 py-1 rounded-md self-start sm:self-auto border border-emerald-400/20">
-                  <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-                  <span>Live on News18 Lokmat</span>
-                </span>
+              <div className="pt-3 text-xs sm:text-sm text-gray-200 border-t border-white/10">
+                <strong className="text-white block font-semibold text-sm sm:text-base">Hon&apos;ble Chief Minister of Maharashtra</strong>
+                <span className="text-emerald-100/80 text-xs">Acknowledging the PTP Nozzle&apos;s irregular parcel precision coverage</span>
               </div>
             </div>
 
@@ -96,15 +78,15 @@ export default function Achievements() {
               <div 
                 onClick={() => setSelectedPhoto({
                   src: "/cm-news18-live.jpg",
-                  title: "Hon'ble Chief Minister of Maharashtra on News18 Lokmat",
-                  caption: "Live telecast acknowledging the IOH PTP Sprinkler's precision coverage for irregular agricultural parcels."
+                  title: "Hon'ble Chief Minister of Maharashtra",
+                  caption: "Acknowledging the IOH PTP Sprinkler's precision coverage for irregular agricultural parcels."
                 })}
                 className="w-full cursor-pointer overflow-hidden rounded-2xl shadow-xl border border-white/20 group hover:opacity-95 transition-opacity"
                 title="Click to view full image"
               >
                 <img 
                   src="/cm-news18-live.jpg" 
-                  alt="Hon'ble Chief Minister of Maharashtra speaking on News18 Lokmat about IOH PTP Sprinkler" 
+                  alt="Hon'ble Chief Minister of Maharashtra acknowledging the IOH PTP Sprinkler" 
                   className="w-full h-auto max-h-[320px] object-cover rounded-2xl block group-hover:scale-105 transition-transform duration-700 ease-corporate"
                 />
               </div>
