@@ -16,7 +16,7 @@ export const siteContent = {
     heading: "Welcome to IOH Engineering",
     supporting: "IOH Engineering develops innovative engineering solutions by combining technology, automation and intelligent design to solve real-world challenges.",
     logo: "/ioh-logo.jpg",
-    bgImage: "/hero-bg.png"
+    bgImage: "/ptp-nozzle.png"
   },
 
   aboutCompany: {
