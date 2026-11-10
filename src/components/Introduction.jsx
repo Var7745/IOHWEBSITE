@@ -1,7 +1,5 @@
 import React from 'react';
 import { 
-  Target, 
-  Eye, 
   CheckCircle2, 
   ShieldCheck, 
   Droplets, 
@@ -244,43 +242,6 @@ export default function Introduction() {
             </div>
           </div>
         )}
-
-        {/* Mission & Vision Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-          
-          {/* Mission */}
-          <div className="p-6 sm:p-8 rounded-2xl border border-[#D5E4D8] bg-[#EDF5EF] shadow-sm corporate-card group reveal-init delay-100">
-            <div className="flex items-center gap-3.5 mb-4">
-              <div className="p-3 rounded-xl bg-[#0B3D2E] text-white shadow-sm group-hover:bg-[#22C55E] transition-colors duration-300 ease-corporate">
-                <Target className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
-              </div>
-              <div>
-                <h4 className="text-lg sm:text-xl font-bold text-gray-900 font-heading group-hover:text-[#0B3D2E] transition-colors">Our Mission</h4>
-                <span className="text-xs font-mono text-[#0B3D2E] uppercase tracking-wider font-semibold">Purpose & Impact</span>
-              </div>
-            </div>
-            <p className="text-sm text-gray-800 leading-relaxed font-medium">
-              {introduction.mission}
-            </p>
-          </div>
-
-          {/* Vision */}
-          <div className="p-6 sm:p-8 rounded-2xl border border-[#D5E4D8] bg-[#EDF5EF] shadow-sm corporate-card group reveal-init delay-200">
-            <div className="flex items-center gap-3.5 mb-4">
-              <div className="p-3 rounded-xl bg-[#0B3D2E] text-white shadow-sm group-hover:bg-[#22C55E] transition-colors duration-300 ease-corporate">
-                <Eye className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
-              </div>
-              <div>
-                <h4 className="text-lg sm:text-xl font-bold text-gray-900 font-heading group-hover:text-[#0B3D2E] transition-colors">Our Vision</h4>
-                <span className="text-xs font-mono text-[#0B3D2E] uppercase tracking-wider font-semibold">Long-Term Direction</span>
-              </div>
-            </div>
-            <p className="text-sm text-gray-800 leading-relaxed font-medium">
-              {introduction.vision}
-            </p>
-          </div>
-
-        </div>
 
       </div>
     </section>
