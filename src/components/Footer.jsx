@@ -100,7 +100,6 @@ export default function Footer() {
             <ul className="space-y-2 text-xs">
               <li><a href="#home" className="hover:text-white text-emerald-100/90 transition-colors focus-visible:ring-1 focus-visible:ring-white rounded p-0.5">Home Landing</a></li>
               <li><a href="#about" className="hover:text-white text-emerald-100/90 transition-colors focus-visible:ring-1 focus-visible:ring-white rounded p-0.5">About Us</a></li>
-              <li><a href="#ptp-nozzle" className="hover:text-white text-emerald-100/90 transition-colors focus-visible:ring-1 focus-visible:ring-white rounded p-0.5">PTP Nozzle System</a></li>
               <li><a href="#achievements" className="hover:text-white text-emerald-100/90 transition-colors focus-visible:ring-1 focus-visible:ring-white rounded p-0.5">Our Achievements</a></li>
               <li><a href="#contact" className="hover:text-white text-emerald-100/90 transition-colors focus-visible:ring-1 focus-visible:ring-white rounded p-0.5">Contact & Services</a></li>
             </ul>

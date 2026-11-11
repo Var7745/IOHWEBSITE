@@ -15,7 +15,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      const sections = ['home', 'about', 'ptp-nozzle', 'achievements', 'contact'];
+      const sections = ['home', 'about', 'achievements', 'contact'];
       const scrollPosition = window.scrollY + 140;
 
       for (const section of sections) {
@@ -49,7 +49,6 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Home', href: '#home', id: 'home' },
     { name: 'About Us', href: '#about', id: 'about' },
-    { name: 'PTP Nozzle', href: '#ptp-nozzle', id: 'ptp-nozzle' },
     { name: 'Achievements', href: '#achievements', id: 'achievements' },
     { name: 'Contact', href: '#contact', id: 'contact' },
   ];

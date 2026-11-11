@@ -45,76 +45,76 @@ export default function Contact() {
     <section 
       id="contact" 
       aria-labelledby="contact-heading"
-      className="scroll-mt-20 py-20 sm:py-24 px-4 sm:px-8 lg:px-16 bg-white text-[#202820] border-b border-[#E1E7DF] relative"
+      className="scroll-mt-20 py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-[#F8FAF7] text-gray-900 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header with Scroll Reveal */}
-        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20 reveal-init">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono font-medium tracking-wider bg-[#EDF3EE] text-[#174C35] border border-[#E1E7DF] mb-3 shadow-xs">
-            <Mail className="w-3.5 h-3.5 text-[#397A4B]" aria-hidden="true" />
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 reveal-init">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider mb-4 bg-white text-[#0B3D2E] border border-[#CDE1D3] shadow-sm animate-float-slow">
+            <Mail className="w-3.5 h-3.5 text-[#22C55E]" aria-hidden="true" />
             <span>Contact & Inquiries</span>
           </div>
           <h2 
             id="contact-heading"
-            className="text-3xl sm:text-4xl font-heading font-semibold text-[#202820] mb-3"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900 font-heading mb-4 break-words"
           >
             Connect With IOH Engineering
           </h2>
-          <p className="text-base text-[#68736B] leading-relaxed font-normal">
+          <p className="text-sm sm:text-lg text-gray-600 leading-relaxed font-normal">
             Connect directly with our engineering and research team for Agricultural PTP Nozzle systems, water and pesticide spraying solutions, commercial deployments, or partnerships.
           </p>
         </div>
 
-        {/* Contact Info Cards with Staggered Scroll Reveal */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16 sm:mb-20">
+        {/* Contact Info Cards with Staggered Scroll Reveal & Corporate Hover */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
           
           {/* Address */}
-          <div className="p-6 rounded-lg border border-[#E1E7DF] bg-[#F7F8F4] hover:bg-white hover:border-[#397A4B] text-center flex flex-col items-center justify-center transition-all duration-200 shadow-xs group reveal-init delay-100">
-            <div className="w-9 h-9 rounded-md bg-[#EDF3EE] text-[#174C35] border border-[#E1E7DF] flex items-center justify-center mb-3 group-hover:bg-[#174C35] group-hover:text-white transition-colors duration-200">
-              <MapPin className="w-4 h-4" aria-hidden="true" />
+          <div className="p-6 rounded-2xl border border-gray-200 bg-white shadow-sm text-center flex flex-col items-center justify-center corporate-card group reveal-init delay-100">
+            <div className="p-3 rounded-xl bg-[#EDF5EF] text-[#0B3D2E] mb-3 group-hover:bg-[#0B3D2E] group-hover:text-white transition-all duration-300 ease-corporate group-hover:scale-110">
+              <MapPin className="w-5 h-5" aria-hidden="true" />
             </div>
-            <h3 className="font-heading font-semibold text-base mb-1 text-[#202820] group-hover:text-[#174C35] transition-colors">Corporate Address</h3>
-            <p className="text-xs text-[#68736B] leading-relaxed">
+            <h3 className="font-bold text-base mb-1 text-gray-900 font-heading group-hover:text-[#0B3D2E] transition-colors">Corporate Address</h3>
+            <p className="text-xs text-gray-600 leading-relaxed">
               {company.address}
             </p>
           </div>
 
           {/* Email */}
-          <div className="p-6 rounded-lg border border-[#E1E7DF] bg-[#F7F8F4] hover:bg-white hover:border-[#397A4B] text-center flex flex-col items-center justify-center transition-all duration-200 shadow-xs group reveal-init delay-150">
-            <div className="w-9 h-9 rounded-md bg-[#EDF3EE] text-[#174C35] border border-[#E1E7DF] flex items-center justify-center mb-3 group-hover:bg-[#174C35] group-hover:text-white transition-colors duration-200">
-              <Mail className="w-4 h-4" aria-hidden="true" />
+          <div className="p-6 rounded-2xl border border-gray-200 bg-white shadow-sm text-center flex flex-col items-center justify-center corporate-card group reveal-init delay-150">
+            <div className="p-3 rounded-xl bg-[#EDF5EF] text-[#0B3D2E] mb-3 group-hover:bg-[#0B3D2E] group-hover:text-white transition-all duration-300 ease-corporate group-hover:scale-110">
+              <Mail className="w-5 h-5" aria-hidden="true" />
             </div>
-            <h3 className="font-heading font-semibold text-base mb-1 text-[#202820] group-hover:text-[#174C35] transition-colors">Email Us</h3>
+            <h3 className="font-bold text-base mb-1 text-gray-900 font-heading group-hover:text-[#0B3D2E] transition-colors">Email Us</h3>
             <a 
               href={`mailto:${company.email}`}
-              className="text-xs font-mono font-medium text-[#202820] hover:text-[#174C35] hover:underline block focus-visible:ring-1 focus-visible:ring-[#174C35] rounded p-0.5"
+              className="text-xs font-mono font-semibold text-gray-900 hover:text-[#0B3D2E] hover:underline block focus-visible:ring-1 focus-visible:ring-[#0B3D2E] rounded p-0.5"
             >
               {company.email}
             </a>
           </div>
 
           {/* Phone */}
-          <div className="p-6 rounded-lg border border-[#E1E7DF] bg-[#F7F8F4] hover:bg-white hover:border-[#397A4B] text-center flex flex-col items-center justify-center transition-all duration-200 shadow-xs group reveal-init delay-200">
-            <div className="w-9 h-9 rounded-md bg-[#EDF3EE] text-[#174C35] border border-[#E1E7DF] flex items-center justify-center mb-3 group-hover:bg-[#174C35] group-hover:text-white transition-colors duration-200">
-              <Phone className="w-4 h-4" aria-hidden="true" />
+          <div className="p-6 rounded-2xl border border-gray-200 bg-white shadow-sm text-center flex flex-col items-center justify-center corporate-card group reveal-init delay-200">
+            <div className="p-3 rounded-xl bg-[#EDF5EF] text-[#0B3D2E] mb-3 group-hover:bg-[#0B3D2E] group-hover:text-white transition-all duration-300 ease-corporate group-hover:scale-110">
+              <Phone className="w-5 h-5" aria-hidden="true" />
             </div>
-            <h3 className="font-heading font-semibold text-base mb-1 text-[#202820] group-hover:text-[#174C35] transition-colors">Call Us</h3>
+            <h3 className="font-bold text-base mb-1 text-gray-900 font-heading group-hover:text-[#0B3D2E] transition-colors">Call Us</h3>
             <a 
               href={`tel:${company.phone1}`}
-              className="text-xs font-mono font-medium text-[#202820] hover:text-[#174C35] hover:underline block focus-visible:ring-1 focus-visible:ring-[#174C35] rounded p-0.5"
+              className="text-xs font-mono font-semibold text-gray-900 hover:text-[#0B3D2E] hover:underline block focus-visible:ring-1 focus-visible:ring-[#0B3D2E] rounded p-0.5"
             >
               {company.phone1}
             </a>
           </div>
 
           {/* Hours */}
-          <div className="p-6 rounded-lg border border-[#E1E7DF] bg-[#F7F8F4] hover:bg-white hover:border-[#397A4B] text-center flex flex-col items-center justify-center transition-all duration-200 shadow-xs group reveal-init delay-250">
-            <div className="w-9 h-9 rounded-md bg-[#EDF3EE] text-[#174C35] border border-[#E1E7DF] flex items-center justify-center mb-3 group-hover:bg-[#174C35] group-hover:text-white transition-colors duration-200">
-              <Clock className="w-4 h-4" aria-hidden="true" />
+          <div className="p-6 rounded-2xl border border-gray-200 bg-white shadow-sm text-center flex flex-col items-center justify-center corporate-card group reveal-init delay-250">
+            <div className="p-3 rounded-xl bg-[#EDF5EF] text-[#0B3D2E] mb-3 group-hover:bg-[#0B3D2E] group-hover:text-white transition-all duration-300 ease-corporate group-hover:scale-110">
+              <Clock className="w-5 h-5" aria-hidden="true" />
             </div>
-            <h3 className="font-heading font-semibold text-base mb-1 text-[#202820] group-hover:text-[#174C35] transition-colors">Working Hours</h3>
-            <p className="text-xs text-[#68736B] leading-relaxed">
+            <h3 className="font-bold text-base mb-1 text-gray-900 font-heading group-hover:text-[#0B3D2E] transition-colors">Working Hours</h3>
+            <p className="text-xs text-gray-600 leading-relaxed">
               Mon - Sat: 9:00 AM - 6:30 PM IST
             </p>
           </div>
@@ -122,20 +122,20 @@ export default function Contact() {
         </div>
 
         {/* Contact Form matching requested minimal design */}
-        <div id="contact-form" className="scroll-mt-28 max-w-2xl mx-auto rounded-xl border border-[#E1E7DF] bg-white p-7 sm:p-10 shadow-xs reveal-init delay-200">
+        <div id="contact-form" className="scroll-mt-28 max-w-2xl mx-auto rounded-3xl border border-gray-200/90 bg-white p-7 sm:p-11 shadow-sm corporate-card reveal-init delay-200">
           {submitted ? (
             <div 
               role="status" 
               aria-live="polite" 
               className="text-center py-8 sm:py-10 space-y-4"
             >
-              <div className="w-14 h-14 rounded-full bg-[#174C35] text-white flex items-center justify-center mx-auto shadow-sm">
-                <CheckCircle2 className="w-7 h-7 text-[#C49A50]" aria-hidden="true" />
+              <div className="w-16 h-16 rounded-full bg-[#0B3D2E] text-white flex items-center justify-center mx-auto shadow-md">
+                <CheckCircle2 className="w-8 h-8 text-[#22C55E]" aria-hidden="true" />
               </div>
-              <h3 className="text-2xl font-heading font-semibold text-[#202820]">
+              <h3 className="text-2xl font-bold font-heading text-black">
                 Message Sent Successfully!
               </h3>
-              <p className="max-w-md mx-auto text-sm text-[#68736B] leading-relaxed">
+              <p className="max-w-md mx-auto text-sm text-gray-600 leading-relaxed">
                 Thank you for reaching out to <strong>IOH Engineering</strong>. Our engineering leads will review your message and contact you promptly.
               </p>
               <div className="pt-4">
@@ -150,7 +150,7 @@ export default function Contact() {
                       message: '',
                     });
                   }}
-                  className="px-6 py-2.5 rounded-md text-xs font-mono font-medium uppercase bg-[#174C35] text-white hover:bg-[#123C2A] corporate-btn transition-colors focus-visible:ring-2 focus-visible:ring-[#174C35] focus-visible:outline-none shadow-xs cursor-pointer"
+                  className="px-7 py-3 rounded-full text-xs font-bold font-mono uppercase bg-[#0B3D2E] text-white hover:bg-[#134E3C] corporate-btn transition-colors focus-visible:ring-2 focus-visible:ring-[#0B3D2E] focus-visible:outline-none shadow-sm cursor-pointer"
                 >
                   Send Another Message
                 </button>
@@ -170,7 +170,7 @@ export default function Contact() {
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 rounded-md text-sm border border-[#E1E7DF] bg-[#F7F8F4] text-[#202820] placeholder-[#8C978F] focus:bg-white focus:outline-none focus:border-[#174C35] focus:ring-1 focus:ring-[#174C35] transition-all shadow-xs"
+                  className="w-full px-4 py-3.5 rounded-xl text-sm border border-gray-200 bg-gray-50/50 text-gray-900 placeholder-gray-400 focus:bg-white focus:outline-none focus:border-[#0B3D2E] focus:ring-2 focus:ring-[#0B3D2E]/20 transition-all shadow-2xs"
                 />
               </div>
 
@@ -186,7 +186,7 @@ export default function Contact() {
                   placeholder="Your Email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 rounded-md text-sm border border-[#E1E7DF] bg-[#F7F8F4] text-[#202820] placeholder-[#8C978F] focus:bg-white focus:outline-none focus:border-[#174C35] focus:ring-1 focus:ring-[#174C35] transition-all shadow-xs"
+                  className="w-full px-4 py-3.5 rounded-xl text-sm border border-gray-200 bg-gray-50/50 text-gray-900 placeholder-gray-400 focus:bg-white focus:outline-none focus:border-[#0B3D2E] focus:ring-2 focus:ring-[#0B3D2E]/20 transition-all shadow-2xs"
                 />
               </div>
 
@@ -202,7 +202,7 @@ export default function Contact() {
                   placeholder="Subject"
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  className="w-full px-4 py-3 rounded-md text-sm border border-[#E1E7DF] bg-[#F7F8F4] text-[#202820] placeholder-[#8C978F] focus:bg-white focus:outline-none focus:border-[#174C35] focus:ring-1 focus:ring-[#174C35] transition-all shadow-xs"
+                  className="w-full px-4 py-3.5 rounded-xl text-sm border border-gray-200 bg-gray-50/50 text-gray-900 placeholder-gray-400 focus:bg-white focus:outline-none focus:border-[#0B3D2E] focus:ring-2 focus:ring-[#0B3D2E]/20 transition-all shadow-2xs"
                 />
               </div>
 
@@ -218,16 +218,16 @@ export default function Contact() {
                   placeholder="Enter message"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3 rounded-md text-sm border border-[#E1E7DF] bg-[#F7F8F4] text-[#202820] placeholder-[#8C978F] focus:bg-white focus:outline-none focus:border-[#174C35] focus:ring-1 focus:ring-[#174C35] transition-all shadow-xs resize-y"
+                  className="w-full px-4 py-3.5 rounded-xl text-sm border border-gray-200 bg-gray-50/50 text-gray-900 placeholder-gray-400 focus:bg-white focus:outline-none focus:border-[#0B3D2E] focus:ring-2 focus:ring-[#0B3D2E]/20 transition-all shadow-2xs resize-y"
                 />
               </div>
 
-              {/* Centered Button */}
-              <div className="pt-2 flex justify-center">
+              {/* Centered Pill Button */}
+              <div className="pt-3 flex justify-center">
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="px-8 py-3 rounded-md font-medium text-sm sm:text-base text-white bg-[#174C35] hover:bg-[#123C2A] corporate-btn shadow-xs disabled:opacity-50 transition-colors focus-visible:ring-2 focus-visible:ring-[#174C35] focus-visible:ring-offset-2 focus-visible:outline-none cursor-pointer"
+                  className="px-9 py-3 rounded-full font-medium text-sm sm:text-base text-white bg-[#0B3D2E] hover:bg-[#134E3C] corporate-btn shadow-md disabled:opacity-50 transition-all duration-250 ease-corporate focus-visible:ring-2 focus-visible:ring-[#0B3D2E] focus-visible:ring-offset-2 focus-visible:outline-none cursor-pointer"
                 >
                   {isSubmitting ? (
                     <span>Sending...</span>

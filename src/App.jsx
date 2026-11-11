@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import AboutCompany from './components/AboutCompany';
 import Introduction from './components/Introduction';
 import Achievements from './components/Achievements';
 import Contact from './components/Contact';
@@ -18,25 +17,22 @@ export default function App() {
       {/* 1. Animated Sticky Navbar with Forest Green Accent */}
       <Navbar />
 
-      {/* 2. SECTION 1: Welcome to IOH Engineering */}
+      {/* 2. Hero Section with Staggered Animations & Slow Zoom */}
       <Hero />
 
-      {/* 3. SECTION 2: About Our Company ("Who We Are") */}
-      <AboutCompany />
-
-      {/* 4. SECTION 3: Agricultural PTP Nozzle System & Leadership Team */}
+      {/* 3. About Us Section (Agricultural Challenge, PTP Precision Nozzle, 8 Points, Mission/Vision, Leadership) */}
       <Introduction />
 
-      {/* 5. Section 4: Engineering Achievements & Recognition */}
+      {/* 4. Achievements Section (Key Milestones, Hackathon Wins, CM State Recognition) */}
       <Achievements />
 
-      {/* 6. Section 5: Contact & Inquiries */}
+      {/* 5. Contact & Services Inquiry Page */}
       <Contact />
 
-      {/* 7. Footer */}
+      {/* 6. Clean Monochrome Footer */}
       <Footer />
 
-      {/* 8. Floating Circular Back-to-Top Button */}
+      {/* 7. Floating Circular Back-to-Top Button */}
       <BackToTop />
     </div>
   );

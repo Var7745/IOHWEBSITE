@@ -12,35 +12,11 @@ export const siteContent = {
     workingHours: "Monday - Saturday: 9:00 AM - 6:30 PM IST"
   },
 
-  welcome: {
-    heading: "Welcome to IOH Engineering",
-    supporting: "IOH Engineering develops innovative engineering solutions by combining technology, automation and intelligent design to solve real-world challenges.",
-    logo: "/ioh-logo.jpg",
-    bgImage: "/welcome-hero-bg.jpg"
-  },
-
-  aboutCompany: {
-    heading: "Who We Are",
-    description: "IOH Engineering is an innovation-driven engineering company focused on developing practical, reliable and technology-oriented solutions across engineering domains.",
-    image: "/ptp-booth.jpg",
-    pillars: [
-      {
-        title: "Company Introduction",
-        text: "Founded with a mission to bridge advanced engineering research with high-impact practical execution, IOH Engineering develops technology-driven systems tailored for demanding environments."
-      },
-      {
-        title: "Engineering Expertise",
-        text: "Our multidisciplinary engineering foundation combines mechanical design, power electronics, embedded robotics, and intelligent automation systems to create dependable hardware and software platforms."
-      },
-      {
-        title: "Innovation Approach",
-        text: "We embrace a first-principles, iterative development philosophy—translating complex engineering challenges into validated, functional prototypes through rigorous field testing."
-      },
-      {
-        title: "Commitment to Practical Solutions",
-        text: "Every solution we engineer is guided by affordability, accessibility, and high operational reliability, ensuring our technology delivers measurable, lasting value on the ground."
-      }
-    ]
+  hero: {
+    title: "Agricultural PTP Nozzle System",
+    subtitle: "An intelligent, centralized smart nozzle engineered by IOH Engineering for targeted water irrigation and precision pesticide spraying across full 1-acre fields, dynamically adapting to irregular farm boundaries without complex piping networks.",
+    cta: "EXPLORE PTP NOZZLE",
+    ctaSecondary: "CONTACT US"
   },
 
   stats: [
