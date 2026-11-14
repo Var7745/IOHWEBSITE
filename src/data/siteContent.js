@@ -12,6 +12,13 @@ export const siteContent = {
     workingHours: "Monday - Saturday: 9:00 AM - 6:30 PM IST"
   },
 
+  welcome: {
+    heading: "Welcome to IOH Engineering",
+    supporting: "Innovating smart irrigation solutions for modern agriculture, starting with our PTP Nozzle for precise and water-efficient crop spraying.",
+    logo: "/ioh-logo.jpg",
+    bgImage: "/hero-field-sprinkler.jpg"
+  },
+
   hero: {
     title: "Agricultural PTP Nozzle System",
     subtitle: "An intelligent, centralized smart nozzle engineered by IOH Engineering for targeted water irrigation and precision pesticide spraying across full 1-acre fields, dynamically adapting to irregular farm boundaries without complex piping networks.",
@@ -105,18 +112,18 @@ export const siteContent = {
 
   team: [
     {
-      name: "Bhavani Guni",
-      role: "CEO, Co-founder",
-      credentials: "B.Tech in Electronics & Communication Engineering",
-      experience: "1 Year of experience in robotics and entrepreneurship club.",
-      image: "/team-bhavani.jpg"
-    },
-    {
       name: "Olive Perike",
       role: "CTO, Co-founder",
       credentials: "M.Tech in Power Electronics",
       experience: "5 Years of experience in robotics.",
       image: "/team-olive.jpg"
+    },
+    {
+      name: "Bhavani Guni",
+      role: "CEO, Co-founder",
+      credentials: "B.Tech in Electronics & Communication Engineering",
+      experience: "1 Year of experience in robotics and entrepreneurship club.",
+      image: "/team-bhavani.jpg"
     }
   ],
 
@@ -125,7 +132,7 @@ export const siteContent = {
       id: 1,
       title: "Agricultural PTP Precision Nozzle",
       subtitle: "Centralized 1-acre precision water irrigation and pesticide spraying delivered through dynamic pan-tilt and pressure-modulated nozzle control.",
-      image: "/ptp-nozzle.png",
+      image: "/welcome-hero-bg.jpg",
       badge: "Water & Pesticide Spraying",
       ctaText: "Explore PTP Nozzle",
       ctaLink: "#about"

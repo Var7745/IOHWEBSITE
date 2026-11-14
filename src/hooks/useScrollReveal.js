@@ -6,10 +6,12 @@ import { useEffect } from 'react';
  */
 export function useScrollReveal() {
   useEffect(() => {
+    const selector = '.reveal-init, .reveal-fade-up, .reveal-fade-in, .reveal-scale-in, .reveal-slide-left, .reveal-slide-right';
+
     // Check if user prefers reduced motion
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) {
-      document.querySelectorAll('.reveal-init').forEach(el => {
+      document.querySelectorAll(selector).forEach(el => {
         el.classList.add('reveal-visible');
       });
       return;
@@ -31,7 +33,7 @@ export function useScrollReveal() {
       }
     );
 
-    const elements = document.querySelectorAll('.reveal-init');
+    const elements = document.querySelectorAll(selector);
     elements.forEach((el) => observer.observe(el));
 
     return () => {

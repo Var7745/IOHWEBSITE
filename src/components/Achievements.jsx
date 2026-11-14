@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { 
-  ArrowRight, 
   Quote, 
   X 
 } from 'lucide-react';
 import { siteContent } from '../data/siteContent';
 
 export default function Achievements() {
-  const { achievements, stats } = siteContent;
+  const { achievements } = siteContent;
   const [selectedPhoto, setSelectedPhoto] = useState(null);
 
   return (
@@ -19,43 +18,20 @@ export default function Achievements() {
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header with Scroll Reveal */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 reveal-init">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 reveal-fade-up">
           <h2 
             id="achievements-heading"
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900 font-heading mb-4 break-words"
           >
-            Engineering Achievements & Recognition
+            Achievements & Recognition
           </h2>
           <p className="text-sm sm:text-lg text-gray-600 leading-relaxed font-normal">
             Validated across competitive hackathons, institutional incubators, and state-level demonstrations for solving real-world irregular agricultural irrigation.
           </p>
         </div>
 
-        {/* Big Impact Statistics Strip with Staggered Scroll Reveal */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 mb-12 sm:mb-16">
-          {stats.map((stat, idx) => {
-            const delays = ['delay-100', 'delay-150', 'delay-200', 'delay-250'];
-            return (
-              <div 
-                key={idx}
-                className={`p-5 sm:p-6 rounded-2xl bg-white border border-[#D5E4D8] shadow-sm text-center flex flex-col items-center justify-center corporate-card reveal-init ${delays[idx % 4]}`}
-              >
-                <div className="text-2xl sm:text-4xl font-extrabold font-heading text-[#0B3D2E] tracking-tight mb-1">
-                  {stat.value}
-                </div>
-                <span className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider text-gray-500 mb-1">
-                  {stat.unit}
-                </span>
-                <span className="text-xs text-gray-700 font-medium">
-                  {stat.label}
-                </span>
-              </div>
-            );
-          })}
-        </div>
-
         {/* Featured Milestone Callout: Hon'ble Chief Minister of Maharashtra Recognition with Live Photo */}
-        <div className="mb-12 sm:mb-16 rounded-3xl bg-[#0B3D2E] text-white p-6 sm:p-8 lg:p-10 shadow-xl border border-[#134E3C] overflow-hidden relative corporate-card reveal-init delay-150">
+        <div className="mb-12 sm:mb-16 rounded-3xl bg-[#0B3D2E] text-white p-6 sm:p-8 lg:p-10 shadow-xl border border-[#134E3C] overflow-hidden relative corporate-card reveal-fade-up delay-150">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
             {/* Statement / Quote Column */}
@@ -100,7 +76,7 @@ export default function Achievements() {
           {achievements.map((item, idx) => (
             <article
               key={item.id}
-              className={`rounded-3xl bg-white border border-[#D5E4D8] shadow-sm corporate-card overflow-hidden flex flex-col justify-between group reveal-init ${idx === 0 ? 'delay-200' : 'delay-300'}`}
+              className={`rounded-3xl bg-white border border-[#D5E4D8] shadow-sm corporate-card overflow-hidden flex flex-col justify-between group reveal-fade-up ${idx === 0 ? 'delay-200' : 'delay-300'} transition-all duration-300 ease-corporate hover:-translate-y-1.5 hover:shadow-lg hover:border-[#22C55E]`}
             >
               <div>
                 {/* Photo at top of card - Edge-to-edge flush with rounded-t-3xl */}
@@ -118,8 +94,8 @@ export default function Achievements() {
                     alt={item.title} 
                     className={
                       item.id === 2
-                        ? "w-full h-auto object-contain block group-hover:scale-105 transition-transform duration-700 ease-corporate"
-                        : "w-full h-60 sm:h-72 md:h-80 object-cover object-bottom block group-hover:scale-105 transition-transform duration-700 ease-corporate"
+                        ? "w-full h-auto object-contain block group-hover:scale-[1.03] transition-transform duration-700 ease-corporate"
+                        : "w-full h-60 sm:h-72 md:h-80 object-cover object-bottom block group-hover:scale-[1.03] transition-transform duration-700 ease-corporate"
                     }
                   />
                 </div>
@@ -154,25 +130,6 @@ export default function Achievements() {
               </div>
             </article>
           ))}
-        </div>
-
-        {/* Bottom Action Banner */}
-        <div className="mt-12 sm:mt-16 p-6 sm:px-10 rounded-2xl sm:rounded-full bg-[#0B3D2E] text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-xl border border-[#134E3C] reveal-init delay-200">
-          <div>
-            <h3 className="text-lg sm:text-xl font-bold font-heading mb-1 text-white">
-              Interested in Deploying Agricultural PTP Nozzles?
-            </h3>
-            <p className="text-xs sm:text-sm text-emerald-100/80">
-              Our engineering team collaborates with commercial farms, agricultural estates, and institutional research partners.
-            </p>
-          </div>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl sm:rounded-full bg-white text-[#0B3D2E] hover:bg-emerald-50 corporate-btn font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors shrink-0 shadow-sm group focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
-          >
-            <span>Contact Engineering</span>
-            <ArrowRight className="w-4 h-4 transition-transform duration-250 ease-corporate group-hover:translate-x-1" aria-hidden="true" />
-          </a>
         </div>
 
       </div>
